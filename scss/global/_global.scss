@@ -1,0 +1,5 @@
+@use '../utilities/variables' as *;
+
+span {
+	color: $color-primary !important;
+}

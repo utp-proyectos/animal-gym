@@ -2,8 +2,11 @@
 @use 'base/base';
 @use 'base/typography';
 
+@use 'global/global';
+
 @use 'components/button';
 @use 'components/input';
 
 @use 'layout/navbar';
 @use 'layout/header';
+@use 'layout/nosotros';

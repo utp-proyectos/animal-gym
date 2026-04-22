@@ -1,0 +1,8 @@
+section#nosotros {
+	.img-fluid {
+		height: 100%;
+		width: 100%;
+		object-fit: cover;
+		transition: transform 0.8s ease;
+	}
+}
