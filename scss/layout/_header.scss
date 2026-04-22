@@ -1,10 +1,6 @@
 @use '../utilities/variables' as *;
 
 header {
-	span {
-		color: $color-primary !important;
-	}
-
 	.slide-image {
 		object-fit: cover;
 	}

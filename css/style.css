@@ -15,6 +15,7 @@ body {
 p {
   font-size: 16px;
   margin-bottom: 1rem;
+  color: #6c757d;
 }
 
 /* Headings */
@@ -109,6 +110,10 @@ h4,
   src: url(../../fonts/dm-sans/DMSans-Bold.ttf) format("truetype");
   font-weight: 700;
 }
+span {
+  color: #b4001a !important;
+}
+
 .c-btn {
   display: inline-block;
   padding: 15px 16px;
@@ -119,6 +124,7 @@ h4,
   cursor: pointer;
   transition: 0.2s ease;
   text-decoration: none;
+  color: #ffffff;
 }
 
 .c-btn-primary {
@@ -156,14 +162,18 @@ header .navbar-nav a {
   filter: invert(1);
 }
 
-header span {
-  color: #b4001a !important;
-}
 header .slide-image {
   object-fit: cover;
 }
 header .slide-gradient {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+}
+
+section#nosotros .img-fluid {
+  height: 100%;
+  width: 100%;
+  object-fit: cover;
+  transition: transform 0.8s ease;
 }
 
 /*# sourceMappingURL=style.css.map */
