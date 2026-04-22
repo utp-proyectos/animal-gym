@@ -1,0 +1,20 @@
+@use '../utilities/variables' as *;
+
+.c-btn {
+	display: inline-block;
+	padding: 15px 16px;
+	font-size: $fs-body-md;
+	border-radius: 4px;
+	border: none;
+	cursor: pointer;
+	transition: 0.2s ease;
+}
+
+.c-btn-primary {
+	background: $color-primary;
+	color: $text-primary;
+
+	&:hover {
+		background: $color-secondary;
+	}
+}
