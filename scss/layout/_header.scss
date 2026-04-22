@@ -1,0 +1,15 @@
+@use '../utilities/variables' as *;
+
+header {
+	span {
+		color: $color-primary !important;
+	}
+
+	.slide-image {
+		object-fit: cover;
+	}
+
+	.slide-gradient {
+		background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
+	}
+}

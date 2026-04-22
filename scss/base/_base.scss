@@ -19,6 +19,7 @@ h1,
 h2,
 h3,
 h4 {
+	color: $text-primary;
 	font-family: 'Lastica';
 	text-transform: uppercase;
 }
@@ -26,7 +27,7 @@ h4 {
 h1,
 .title-1 {
 	font-size: clamp(28px, 4vw, $fs-h1);
-	letter-spacing: 2px;
+	letter-spacing: 3px;
 }
 
 h2,
