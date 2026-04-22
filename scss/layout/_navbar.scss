@@ -1,0 +1,16 @@
+@use '../utilities/variables' as *;
+
+header {
+	img {
+		max-height: 50px;
+		width: auto;
+	}
+	.navbar-nav a {
+		font-family: 'Lastica';
+		font-size: $fs-h4;
+	}
+}
+
+.navbar-toggler-icon {
+	filter: invert(1);
+}
