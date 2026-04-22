@@ -1,7 +1,7 @@
 @use '../utilities/variables' as *;
 
 header {
-	img {
+	.navbar-logo {
 		max-height: 50px;
 		width: auto;
 	}

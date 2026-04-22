@@ -18,7 +18,7 @@
 				<div class="container">
 
 					<a class="navbar-brand text-white" href="#">
-						<img src="images/logo.png" alt="Logo-Aniaml-Gym" class="img-fluid">
+						<img src="images/logo.png" alt="Logo-Aniaml-Gym" class="img-fluid navbar-logo">
 					</a>
 
 					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
@@ -42,9 +42,78 @@
 				</div>
 			</nav>
 		</div>
+
+		<!-- Carrusel Moderno -->
+		<div class="header__info">
+			<div id="carouselGym" class="carousel slide vh-100" data-bs-ride="carousel" data-bs-interval="6000">
+
+				<!-- Indicadores -->
+				<div class="carousel-indicators">
+					<button type="button" data-bs-target="#carouselGym" data-bs-slide-to="0" class="active"
+						aria-current="true"></button>
+					<button type="button" data-bs-target="#carouselGym" data-bs-slide-to="1"></button>
+				</div>
+
+				<!-- Slides -->
+				<div class="carousel-inner h-100">
+
+					<!-- Slide 1 -->
+					<div class="carousel-item active h-100 position-relative">
+						<img src="images/layout/header/principal.jpg" class="slide-image d-block w-100 h-100"
+							alt="Gimnasio moderno">
+						<!-- Gradiente Oscuro -->
+						<div class="slide-gradient overlay position-absolute top-0 start-0 w-100 h-100">
+						</div>
+
+						<!-- Contenido -->
+						<div
+							class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start px-5 animate__animated animate__fadeInUp">
+							<h1 class="fw-bold mb-3 title-1">
+								<span>Bienvenido a</span><br> Nuestro Gimnasio
+							</h1>
+							<p class="lead text-white-50 mb-4 fs-5">Transforma tu cuerpo, mejora tu vida. Vive la experiencia
+								fitness.</p>
+							<a href="#membresias" class="c-btn c-btn-primary shadow-lg">
+								VER PLANES
+							</a>
+						</div>
+					</div>
+
+					<!-- Slide 2 -->
+					<div class="carousel-item h-100 position-relative">
+						<img src="images/layout/header/secondary.png" class="slide-image d-block w-100 h-100"
+							alt="Entrenamiento personalizado">
+						<div class="slide-gradient overlay position-absolute top-0 start-0 w-100 h-100">
+						</div>
+
+						<div
+							class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start px-5 animate__animated animate__fadeInUp">
+							<h1 class="fw-bold mb-3 title-1">
+								<span>Entrena con</span><br> los Mejores
+							</h1>
+							<p class="lead text-white-50 mb-4 fs-5">Planes flexibles, entrenadores expertos y resultados reales.
+							</p>
+							<a href="#clases" class="c-btn c-btn-primary shadow-lg">
+								VER CLASES
+							</a>
+						</div>
+					</div>
+				</div>
+
+				<!-- Controles -->
+				<button class="carousel-control-prev" type="button" data-bs-target="#carouselGym" data-bs-slide="prev">
+					<span class="carousel-control-prev-icon"></span>
+					<span class="visually-hidden">Anterior</span>
+				</button>
+				<button class="carousel-control-next" type="button" data-bs-target="#carouselGym" data-bs-slide="next">
+					<span class="carousel-control-next-icon"></span>
+					<span class="visually-hidden">Siguiente</span>
+				</button>
+			</div>
+		</div>
 	</header>
 
-	<button class="c-btn c-btn-primary">Ver inscrpcion</button>
+	<button class="c-btn c-btn-primary">Ver inscripcion</button>
 
 	<form>
 		<div class="mb-3">
