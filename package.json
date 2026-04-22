@@ -1,6 +1,12 @@
 {
 	"scripts": {
-		"format": "prettier --write ."
+		"format": "prettier --write .",
+		"sass": "sass --watch scss/style.scss css/style.css"
+	},
+	"devDependencies": {
+		"sass": "^1.99.0"
+	},
+	"dependencies": {
+		"bootstrap": "^5.3.8"
 	}
 }
-
