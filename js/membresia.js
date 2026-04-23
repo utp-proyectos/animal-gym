@@ -45,20 +45,20 @@ const lista = document.querySelector('#membresias-splide .splide__list');
 
 membresias.forEach(m => {
     lista.innerHTML += `
-    <li class="splide__slide">
+    <li class="splide__slide d-flex justify-content-center">
       <div class="card custom-card border-0 shadow-lg rounded-0 overflow-hidden h-100">
         <div class="card-body text-center p-4">
-          <h4 class="title-membresia fw-bold mb-4">${m.titulo}</h4>
-          <p class="price-membresia text-lg fw-bold mb-3">${m.precio}</p>
+          <h3 class="mb-4 color-primary">${m.titulo}</h3>
+          <p class="text-lg fw-bold mb-3 color-primary">${m.precio}</p>
           <p class="text-md">${m.precioDesc}</p>
           <p class="text-wrap mb-4">${m.descripcion}</p>
           <div class="d-flex justify-content-center align-items-center">
-            <i class="bi bi-clock-fill fs-3 me-2 icon-membresia"></i>
+            <i class="bi bi-clock-fill fs-3 me-2 color-primary"></i>
             <p class="text-white mt-3 fw-bold me-2 text-md">Duración:</p>
             <p class="text-white mt-3 fw-bold me-2 text-md">${m.duracion}</p>
           </div>
           <div class="d-flex justify-content-center align-items-center">
-            <i class="bi bi-file-person-fill icon-membresia fs-3 me-2"></i>
+            <i class="bi bi-file-person-fill color-primary fs-3 me-2"></i>
             <p class="text-white mt-3 fw-bold me-2 text-md">Cupos disponibles:</p>
             <p class="text-white mt-3 fw-bold me-2 text-md">${m.cupos}</p>
           </div>
@@ -71,17 +71,18 @@ membresias.forEach(m => {
 });
 
 new Splide('#membresias-splide', {
-    //type: 'loop',
-    focus: 'center',
+    type: 'loop',
     perPage: 4,
-    gap: '1rem',
     pagination: false,
     arrows: true,
     breakpoints: {
-        1000: {
+        1440: {
+            perPage: 3
+        },
+        1300: {
             perPage: 2
         },
-        650: {
+        880: {
             perPage: 1
         }
     }

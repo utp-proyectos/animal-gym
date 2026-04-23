@@ -84,6 +84,11 @@ h4,
   font-weight: 500;
 }
 
+/* color text */
+.color-primary {
+  color: #b4001a;
+}
+
 @font-face {
   font-family: "Lastica";
   src: url(../../fonts/lastica/fonnts.com-Lastica.ttf) format("truetype");
@@ -181,18 +186,11 @@ section#maquinas .bg-primary {
 }
 section#maquinas .bg-secondary {
   height: 200px;
-section#membresias .title-membresia,
-section#membresias .price-membresia,
-section#membresias .icon-membresia {
-  color: #b4001a;
 }
+
 section#membresias .custom-card {
-  width: 320px;
+  max-width: 320px;
   background: linear-gradient(to bottom, #000000, #141414);
-}
-section#membresias .splide__slide {
-  display: flex;
-  justify-content: center;
 }
 
 /*# sourceMappingURL=style.css.map */
