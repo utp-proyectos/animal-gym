@@ -176,4 +176,11 @@ section#nosotros .img-fluid {
   transition: transform 0.8s ease;
 }
 
+section#maquinas .bg-primary {
+  height: 415px;
+}
+section#maquinas .bg-secondary {
+  height: 200px;
+}
+
 /*# sourceMappingURL=style.css.map */
