@@ -1,0 +1,17 @@
+@use '../utilities/variables' as *;
+section#membresias {
+	.title-membresia,
+	.price-membresia,
+	.icon-membresia {
+		color: $color-primary;
+	}
+	.custom-card {
+		width: 320px;
+
+		background: linear-gradient(to bottom, $bg-body, #141414);
+	}
+	.splide__slide {
+		display: flex;
+		justify-content: center;
+	}
+}
