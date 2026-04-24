@@ -1,0 +1,43 @@
+@use '../utilities/variables' as *;
+
+.card-product {
+	max-width: 400px;
+	background-color: $bg-secondary;
+}
+.product-container {
+	position: relative;
+	width: 100%;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+.circle {
+	position: relative;
+	z-index: 1;
+}
+
+.product {
+	position: absolute;
+	z-index: 2;
+	top: 50%;
+	left: 50%;
+	transform: translate(-50%, -60%);
+}
+.product-one {
+	width: 340px;
+	height: 350px;
+}
+.product-two {
+	width: 380px;
+	height: 350px;
+}
+.product-three {
+	width: 230px;
+	height: 340px;
+}
+@media (max-width: 767px) {
+	.card-product {
+		margin: auto;
+	}
+}
