@@ -4,4 +4,7 @@ section#membresias {
 		max-width: 320px;
 		background: linear-gradient(to bottom, $bg-body, #141414);
 	}
+	.membresia-mas-vendida {
+		border: 3px solid $color-primary;
+	}
 }
