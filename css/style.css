@@ -191,5 +191,18 @@ section#membresias .custom-card {
   max-width: 320px;
   background: linear-gradient(to bottom, #000000, #141414);
 }
+section#membresias .membresia-mas-vendida {
+  border: 3px solid #b4001a;
+}
+
+.img-footer {
+  max-width: 250px;
+}
+
+@media (max-width: 250px) {
+  .img-footer {
+    width: 80%;
+  }
+}
 
 /*# sourceMappingURL=style.css.map */
