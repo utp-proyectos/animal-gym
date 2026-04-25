@@ -1,5 +1,6 @@
-document.addEventListener('DOMContentLoaded', () => {
+export const initNavbarScroll = () => {
 	const navbar = document.querySelector('.navbar-main')
+	const btnBackToTop = document.getElementById('btnBackToTop')
 	let lastScroll = 0
 	let ticking = false
 
@@ -17,8 +18,25 @@ document.addEventListener('DOMContentLoaded', () => {
 			navbar.classList.remove('navbar-hidden')
 		}
 
+		if (btnBackToTop) {
+			if (currentScroll > 400) {
+				btnBackToTop.style.display = 'block'
+			} else {
+				btnBackToTop.style.display = 'none'
+			}
+		}
+
 		lastScroll = currentScroll <= 0 ? 0 : currentScroll
 		ticking = false
+
+		if (btnBackToTop) {
+			btnBackToTop.addEventListener('click', () => {
+				window.scrollTo({
+					top: 0,
+					behavior: 'smooth',
+				})
+			})
+		}
 	}
 
 	window.addEventListener('scroll', () => {
@@ -27,4 +45,4 @@ document.addEventListener('DOMContentLoaded', () => {
 			ticking = true
 		}
 	})
-})
+}
