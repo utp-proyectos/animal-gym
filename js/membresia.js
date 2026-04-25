@@ -48,7 +48,7 @@ const membresias = [
     }
 ];
 
-const lista = document.querySelector('#membresias-splide .splide__list')
+const lista = document.querySelector('#memberships-splide .splide__list')
 membresias.sort((a, b) => b.ventas - a.ventas);
 const mejor = membresias[0];
 membresias.splice(0, 1);
@@ -61,7 +61,7 @@ membresias.forEach(m => {
 
         `
     <li class="splide__slide d-flex justify-content-center">
-      <div class="card custom-card shadow-lg  ${m.ventas === maxVentas ? 'membresia-mas-vendida' : ''} overflow-hidden h-100">
+      <div class="card custom-card shadow-lg  ${m.ventas === maxVentas ? 'popular-membership' : ''} overflow-hidden h-100">
         <div class="card-body text-center p-4">
           <h3 class="mb-4 color-primary">${m.titulo}</h3>
           <p class="text-lg fw-bold mb-3 color-primary">${m.precio}</p>
@@ -85,19 +85,18 @@ membresias.forEach(m => {
     </li>`;
 });
 
-new Splide('#membresias-splide', {
+new Splide('#memberships-splide', {
     type: 'loop',
-    perPage: 4,
+    perPage: 3,
     pagination: false,
     arrows: true,
     breakpoints: {
-        1440: {
-            perPage: 3
-        },
+
         1300: {
             perPage: 2
         },
-        880: {
+
+        992: {
             perPage: 1
         }
     }
