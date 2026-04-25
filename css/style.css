@@ -176,6 +176,14 @@ h4,
   filter: invert(1);
 }
 
+.navbar-main {
+  transition: transform 0.3s ease;
+}
+
+.navbar-hidden {
+  transform: translateY(-100%);
+}
+
 #header .slide-image {
   object-fit: cover;
 }
