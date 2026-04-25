@@ -88,3 +88,12 @@ h4,
 .color-primary {
 	color: $color-primary;
 }
+
+.section-center {
+	padding-top: 3rem;
+	padding-bottom: 3rem;
+	min-height: 100vh;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}

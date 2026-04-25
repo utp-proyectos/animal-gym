@@ -29,15 +29,6 @@
   src: url(../../fonts/dm-sans/DMSans-Bold.ttf) format("truetype");
   font-weight: 700;
 }
-.title-1 span,
-.title-2 span {
-  color: #b4001a;
-}
-
-.color-primary {
-  color: #b4001a;
-}
-
 body {
   font-family: "DMSans", "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
   font-weight: 400;
@@ -119,6 +110,24 @@ h4,
   font-weight: 500;
 }
 
+.title-1 span,
+.title-2 span {
+  color: #b4001a;
+}
+
+.color-primary {
+  color: #b4001a;
+}
+
+.section-center {
+  padding-top: 3rem;
+  padding-bottom: 3rem;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
 .c-btn {
   display: inline-block;
   padding: 15px 16px;
@@ -154,11 +163,11 @@ h4,
   transition: 0.2s ease;
 }
 
-header .navbar-logo {
+#header .navbar-logo {
   max-height: 50px;
   width: auto;
 }
-header .navbar-nav a {
+#header .navbar-nav a {
   font-family: "Lastica";
   font-size: 16px;
 }
@@ -167,10 +176,10 @@ header .navbar-nav a {
   filter: invert(1);
 }
 
-header .slide-image {
+#header .slide-image {
   object-fit: cover;
 }
-header .slide-gradient {
+#header .slide-gradient {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
@@ -181,10 +190,10 @@ section#nosotros .img-fluid {
   transition: transform 0.8s ease;
 }
 
-section#maquinas .bg-primary {
+#maquinas .bg-primary {
   height: 415px;
 }
-section#maquinas .bg-secondary {
+#maquinas .bg-secondary {
   height: 200px;
 }
 
