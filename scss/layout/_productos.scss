@@ -1,6 +1,6 @@
 @use '../utilities/variables' as *;
 
-.card-product {
+.product-card {
 	max-width: 400px;
 	background-color: $bg-secondary;
 }
@@ -23,21 +23,22 @@
 	top: 50%;
 	left: 50%;
 	transform: translate(-50%, -60%);
+	max-width: 100%;
+	height: auto;
 }
 .product-one {
-	width: 340px;
-	height: 350px;
+	max-width: 100%;
 }
+
 .product-two {
-	width: 380px;
-	height: 350px;
+	max-width: 110%;
 }
+
 .product-three {
-	width: 230px;
-	height: 340px;
+	max-width: 70%;
 }
 @media (max-width: 767px) {
-	.card-product {
+	.product-card {
 		margin: auto;
 	}
 }
