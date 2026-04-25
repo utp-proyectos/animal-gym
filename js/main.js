@@ -1,2 +1,6 @@
-import './components/navbar.js'
 import './membresia.js'
+import { initNavbarScroll } from './components/navbar.js'
+
+document.addEventListener('DOMContentLoaded', () => {
+	initNavbarScroll()
+})
