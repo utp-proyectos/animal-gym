@@ -1,14 +1,5 @@
 @use '../utilities/variables' as *;
 
-.title-1 span,
-.title-2 span {
-	color: $color-primary;
-}
-
-.color-primary {
-	color: $color-primary;
-}
-
 body {
 	font-family: 'DMSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
 	font-weight: 400;
@@ -87,4 +78,13 @@ h4,
 .label-sm {
 	font-size: $fs-label-sm;
 	font-weight: 500;
+}
+
+.title-1 span,
+.title-2 span {
+	color: $color-primary;
+}
+
+.color-primary {
+	color: $color-primary;
 }
