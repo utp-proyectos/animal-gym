@@ -6,13 +6,18 @@
 		width: auto;
 	}
 	.navbar-nav a {
-		font-family: 'Lastica';
+		font-family: 'DMSans', 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+		font-weight: 400;
 		font-size: $fs-h4;
 	}
 }
 
 .navbar-toggler-icon {
 	filter: invert(1);
+}
+
+.navbar-nav {
+	gap: 20px;
 }
 
 .navbar-main {
