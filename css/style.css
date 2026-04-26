@@ -284,10 +284,6 @@ section#nosotros .img-fluid {
   background-color: #000000;
 }
 
-.text-red {
-  color: #b4001a;
-}
-
 .class-card {
   height: 280px;
   cursor: pointer;
@@ -344,6 +340,68 @@ section#nosotros .img-fluid {
   padding: 20px;
   opacity: 0;
   transition: all 0.3s ease;
+}
+
+.entrenadores-section {
+  background-color: #000000;
+}
+
+.trainer-card {
+  background-color: #000000;
+  padding: 1.5rem 1rem 1.2rem;
+  transition: all 0.3s ease;
+}
+
+.trainer-img-box {
+  display: flex;
+  justify-content: center;
+  align-items: flex-end;
+  height: 380px;
+  overflow: hidden;
+}
+
+.trainer-img {
+  height: 100%;
+  object-fit: contain;
+  filter: grayscale(100%) brightness(0.8);
+  transition: all 0.4s ease;
+}
+
+.trainer-card:hover .trainer-img {
+  filter: grayscale(0%) brightness(1);
+  transform: scale(1.03);
+}
+
+.trainer-content {
+  margin-top: 1rem;
+}
+
+.trainer-extra {
+  opacity: 0;
+  max-height: 0;
+  overflow: hidden;
+  transition: all 0.3s ease;
+}
+
+.trainer-card:hover .trainer-extra {
+  opacity: 1;
+  max-height: 200px;
+}
+
+.trainer-social i {
+  color: #b4001a;
+  margin: 0 6px;
+  cursor: pointer;
+}
+
+@media (max-width: 768px) {
+  .trainer-extra {
+    opacity: 1;
+    max-height: none;
+  }
+  .trainer-img {
+    filter: none !important;
+  }
 }
 
 /*# sourceMappingURL=style.css.map */
