@@ -288,50 +288,88 @@ p {
   }
 }
 .product-card {
-  max-width: 400px;
+  height: 400px;
   background-color: #212529;
-}
-
-.product-container {
   position: relative;
-  width: 100%;
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  border-radius: 12px;
+  transform-style: preserve-3d;
 }
-
-.circle {
-  position: relative;
-  z-index: 1;
-}
-
-.product {
+.product-card::before, .product-card::after {
   position: absolute;
-  z-index: 2;
+  font-weight: 900;
+  color: #fff;
+  font-style: italic;
+  opacity: 0;
+  transition: 0.5s;
+}
+.product-card::before {
+  content: "ANIMAL";
+  top: 20px;
+  left: 20px;
+  font-size: 5em;
+}
+.product-card::after {
+  content: "GYM";
+  bottom: 20px;
+  right: 20px;
+  font-size: 4em;
+}
+.product-card:hover::before, .product-card:hover::after {
+  opacity: 0.03;
+}
+.product-name {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  text-align: center;
+  transform-style: preserve-3d;
+  transform: translate3d(0, 0, 75px);
+  transition: 0.5s;
+  opacity: 0;
+  z-index: 10;
+  color: #fff;
+  font-weight: 900;
+  font-size: 1.4rem;
+}
+.product-card:hover .product-name {
+  opacity: 1;
+  top: 30px;
+}
+.product-circle {
+  position: absolute;
   top: 50%;
   left: 50%;
-  transform: translate(-50%, -60%);
-  max-width: 100%;
-  height: auto;
+  width: 200px;
+  height: 200px;
+  border-radius: 50%;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px);
+  z-index: 10;
+}
+.product-circle-1 {
+  background-color: #e04040;
+}
+.product-circle-2 {
+  background-color: #40b3e0;
+}
+.product-circle-3 {
+  background-color: rgb(20, 20, 20);
+}
+.product {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  max-width: 150px;
+  transform-style: preserve-3d;
+  transform: translate3d(-50%, -50%, 50px);
+  transition: 0.5s;
+  z-index: 11;
+}
+.product-card:hover .product {
+  transform: translate3d(-50%, -50%, 100px) rotate(15deg);
 }
 
-.product-one {
-  max-width: 100%;
-}
-
-.product-two {
-  max-width: 110%;
-}
-
-.product-three {
-  max-width: 70%;
-}
-
-@media (max-width: 767px) {
-  .product-card {
-    margin: auto;
-  }
-}
 .clases-section {
   background-color: #000000;
 }
