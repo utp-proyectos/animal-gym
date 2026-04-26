@@ -1,44 +1,95 @@
 @use '../utilities/variables' as *;
 
-.product-card {
-	max-width: 400px;
-	background-color: $bg-secondary;
-}
-.product-container {
-	position: relative;
-	width: 100%;
-	display: flex;
-	justify-content: center;
-	align-items: center;
-}
-
-.circle {
-	position: relative;
-	z-index: 1;
-}
-
 .product {
+	&-card {
+		height: 400px;
+		background-color: $bg-secondary;
+		position: relative;
+		border-radius: 12px;
+		transform-style: preserve-3d;
+
+		&::before,
+		&::after {
+			position: absolute;
+			font-weight: 900;
+			color: #fff;
+			font-style: italic;
+			opacity: 0;
+			transition: 0.5s;
+		}
+
+		&::before {
+			content: 'ANIMAL';
+			top: 20px;
+			left: 20px;
+			font-size: 5em;
+		}
+		&::after {
+			content: 'GYM';
+			bottom: 20px;
+			right: 20px;
+			font-size: 4em;
+		}
+
+		&:hover::before,
+		&:hover::after {
+			opacity: 0.03;
+		}
+	}
+
+	&-name {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		text-align: center;
+		transform-style: preserve-3d;
+		transform: translate3d(0, 0, 75px);
+		transition: 0.5s;
+		opacity: 0;
+		z-index: 10;
+		color: #fff;
+		font-weight: 900;
+		font-size: 1.4rem;
+	}
+
+	&-card:hover &-name {
+		opacity: 1;
+		top: 30px;
+	}
+
+	&-circle {
+		position: absolute;
+		top: 50%;
+		left: 50%;
+		width: 200px;
+		height: 200px;
+		border-radius: 50%;
+		transform-style: preserve-3d;
+		transform: translate3d(-50%, -50%, 50px);
+		z-index: 10;
+
+		&-1 {
+			background-color: #e04040;
+		}
+		&-2 {
+			background-color: #40b3e0;
+		}
+		&-3 {
+			background-color: rgb(20, 20, 20);
+		}
+	}
+
 	position: absolute;
-	z-index: 2;
 	top: 50%;
 	left: 50%;
-	transform: translate(-50%, -60%);
-	max-width: 100%;
-	height: auto;
-}
-.product-one {
-	max-width: 100%;
-}
+	max-width: 150px;
+	transform-style: preserve-3d;
+	transform: translate3d(-50%, -50%, 50px);
+	transition: 0.5s;
+	z-index: 11;
 
-.product-two {
-	max-width: 110%;
-}
-
-.product-three {
-	max-width: 70%;
-}
-@media (max-width: 767px) {
-	.product-card {
-		margin: auto;
+	&-card:hover & {
+		transform: translate3d(-50%, -50%, 100px) rotate(15deg);
 	}
 }
