@@ -16,33 +16,30 @@ p {
 }
 
 /* Headings */
-h1,
-h2,
-h3,
-h4 {
+.title-1,
+.title-2,
+.title-3,
+.title-4 {
 	color: $text-primary;
 	font-family: 'Lastica';
 	text-transform: uppercase;
 }
-h1,
+
 .title-1 {
 	font-size: clamp(28px, 4vw, $fs-h1);
 	letter-spacing: 3px;
 }
 
-h2,
 .title-2 {
 	font-size: clamp(26px, 3.5vw, $fs-h2);
 	letter-spacing: 1px;
 }
 
-h3,
 .title-3 {
 	font-size: clamp(20px, 3vw, $fs-h3);
 	letter-spacing: 1.5px;
 }
 
-h4,
 .title-4 {
 	font-size: $fs-h4;
 	letter-spacing: 2px;
@@ -81,7 +78,8 @@ h4,
 }
 
 .title-1 span,
-.title-2 span {
+.title-2 span,
+.title-highlight span {
 	color: $color-primary;
 }
 
@@ -89,11 +87,20 @@ h4,
 	color: $color-primary;
 }
 
+.section {
+	padding-top: 6rem;
+}
+
 .section-center {
-	padding-top: 3rem;
-	padding-bottom: 3rem;
 	min-height: 100vh;
 	display: flex;
 	align-items: center;
 	justify-content: center;
+}
+
+.img-fluid {
+	max-width: 100%;
+	height: auto;
+	object-fit: cover;
+	display: block;
 }

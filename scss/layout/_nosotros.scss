@@ -1,8 +1,44 @@
-section#nosotros {
-	.img-fluid {
-		height: 100%;
-		width: 100%;
-		object-fit: cover;
-		transition: transform 0.8s ease;
+.nosotros {
+	&-welcome {
+		font-size: 10px;
+		letter-spacing: 30%;
+	}
+
+	&-title {
+		font-size: 4rem;
+		font-weight: 900;
+		color: white;
+		line-height: 120%;
+	}
+
+	&-subtext {
+		position: absolute;
+		bottom: -85dvh;
+
+		h2 {
+			font-size: 0.8rem;
+			letter-spacing: 20%;
+			font-weight: bold;
+		}
+		p {
+			color: #81858e;
+		}
+	}
+
+	&-video {
+		width: 300px;
+		height: 60dvh;
+		clip-path: polygon(0 0, 75% 15%, 100% 100%, 0 95%);
+		position: absolute;
+		top: 5dvh;
+		left: 50%;
+		transform: translateX(-50%);
+
+		video {
+			width: 100%;
+			height: 100%;
+			object-fit: cover;
+			display: block;
+		}
 	}
 }

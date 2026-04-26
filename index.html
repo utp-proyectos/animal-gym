@@ -1,544 +1,612 @@
 <!doctype html>
 <html lang="es">
+	<head>
+		<meta charset="UTF-8" />
+		<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+		<title>Animal Gym</title>
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css"
+			rel="stylesheet"
+			integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB"
+			crossorigin="anonymous"
+		/>
+		<link rel="stylesheet" href="css/style.css" />
+		<link
+			href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css"
+			rel="stylesheet"
+		/>
+		<link
+			rel="stylesheet"
+			href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css"
+		/>
+	</head>
 
-<head>
-	<meta charset="UTF-8" />
-	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Animal Gym</title>
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/css/bootstrap.min.css" rel="stylesheet"
-		integrity="sha384-sRIl4kxILFvY47J16cr9ZwB07vP4J8+LH7qKQnuqkuIAvNWLzeN8tE5YBujZqJLB" crossorigin="anonymous" />
-	<link rel="stylesheet" href="css/style.css">
-	<link href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.css" rel="stylesheet">
-	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/css/splide.min.css">
-</head>
+	<body>
+		<header id="header">
+			<div class="header__menu">
+				<nav class="navbar navbar-expand-lg bg-black d-flex fixed-top navbar-main">
+					<div class="container">
+						<a class="navbar-brand text-white" href="#">
+							<img
+								src="assets/images/logo.png"
+								alt="Logo-Aniaml-Gym"
+								class="img-fluid navbar-logo"
+							/>
+						</a>
 
-<body>
+						<button
+							class="navbar-toggler"
+							type="button"
+							data-bs-toggle="collapse"
+							data-bs-target="#navbarNavAltMarkup"
+							aria-controls="navbarNavAltMarkup"
+							aria-expanded="false"
+							aria-label="Toggle navigation"
+						>
+							<span class="navbar-toggler-icon"></span>
+						</button>
 
-	<header id="header">
-		<div class="header__menu">
-			<nav class="navbar navbar-expand-lg bg-black d-flex fixed-top navbar-main">
-				<div class="container">
+						<div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
+							<div class="navbar-nav mx-auto text-center title-4">
+								<a class="nav-link text-white title-4" href="#">Inicio</a>
+								<a class="nav-link text-white title-4" href="#clases">Clases</a>
+								<a class="nav-link text-white title-4" href="#entrenadores">Entrenadores</a>
+								<a class="nav-link text-white title-4" href="#maquinas">Equipos</a>
+								<a class="nav-link text-white title-4" href="#product">Productos</a>
+								<a class="nav-link text-white title-4" href="#memberships">Membresías</a>
+							</div>
+							<!-- Botón -->
+							<div class="text-center">
+								<a href="#" class="c-btn c-btn-primary">LOGIN</a>
+							</div>
+						</div>
+					</div>
+				</nav>
+			</div>
 
-					<a class="navbar-brand text-white" href="#">
-						<img src="assets/images/logo.png" alt="Logo-Aniaml-Gym" class="img-fluid navbar-logo">
-					</a>
+			<!-- Carrusel Moderno -->
+			<div class="header__info">
+				<div
+					id="carouselGym"
+					class="carousel slide vh-100"
+					data-bs-ride="carousel"
+					data-bs-interval="6000"
+				>
+					<!-- Indicadores -->
+					<div class="carousel-indicators">
+						<button
+							type="button"
+							data-bs-target="#carouselGym"
+							data-bs-slide-to="0"
+							class="active"
+							aria-current="true"
+						></button>
+						<button type="button" data-bs-target="#carouselGym" data-bs-slide-to="1"></button>
+					</div>
 
-					<button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNavAltMarkup"
-						aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
-						<span class="navbar-toggler-icon"></span>
+					<!-- Slides -->
+					<div class="carousel-inner h-100">
+						<!-- Slide 1 -->
+						<div class="carousel-item active h-100 position-relative">
+							<img
+								src="assets/images/layout/header/principal.jpg"
+								class="slide-image d-block w-100 h-100"
+								alt="Gimnasio moderno"
+							/>
+							<!-- Gradiente Oscuro -->
+							<div class="slide-gradient overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+							<!-- Contenido -->
+							<div
+								class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start px-5 animate__animated animate__fadeInUp"
+							>
+								<h1 class="fw-bold mb-3 title-1">
+									<span>Bienvenido a</span><br />
+									Nuestro Gimnasio
+								</h1>
+								<p class="mb-4">
+									Transforma tu cuerpo, mejora tu vida. Vive la experiencia fitness.
+								</p>
+								<a href="#membresias" class="c-btn c-btn-primary shadow-lg"> VER PLANES </a>
+							</div>
+						</div>
+
+						<!-- Slide 2 -->
+						<div class="carousel-item h-100 position-relative">
+							<img
+								src="assets/images/layout/header/secondary.png"
+								class="slide-image d-block w-100 h-100"
+								alt="Entrenamiento personalizado"
+							/>
+							<div class="slide-gradient overlay position-absolute top-0 start-0 w-100 h-100"></div>
+
+							<div
+								class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start px-5 animate__animated animate__fadeInUp"
+							>
+								<h1 class="fw-bold mb-3 title-1">
+									<span>Entrena con</span><br />
+									los Mejores
+								</h1>
+								<p class="mb-4">Planes flexibles, entrenadores expertos y resultados reales.</p>
+								<a href="#clases" class="c-btn c-btn-primary shadow-lg"> VER CLASES </a>
+							</div>
+						</div>
+					</div>
+
+					<!-- Controles -->
+					<button
+						class="carousel-control-prev"
+						type="button"
+						data-bs-target="#carouselGym"
+						data-bs-slide="prev"
+					>
+						<span class="carousel-control-prev-icon"></span>
+						<span class="visually-hidden">Anterior</span>
 					</button>
-
-					<div class="collapse navbar-collapse justify-content-center" id="navbarNavAltMarkup">
-						<div class="navbar-nav mx-auto text-center title-4">
-							<a class="nav-link text-white title-4" href="#">Inicio</a>
-							<a class="nav-link text-white title-4" href="#clases">Clases</a>
-							<a class="nav-link text-white title-4" href="#entrenadores">Entrenadores</a>
-							<a class="nav-link text-white title-4" href="#maquinas">Equipos</a>
-							<a class="nav-link text-white title-4" href="#product">Productos</a>
-							<a class="nav-link text-white title-4" href="#memberships">Membresías</a>
-						</div>
-						<!-- Botón -->
-						<div class="text-center">
-							<a href="#" class="c-btn c-btn-primary">LOGIN</a>
-						</div>
-					</div>
-				</div>
-			</nav>
-		</div>
-
-		<!-- Carrusel Moderno -->
-		<div class="header__info">
-			<div id="carouselGym" class="carousel slide vh-100" data-bs-ride="carousel" data-bs-interval="6000">
-
-				<!-- Indicadores -->
-				<div class="carousel-indicators">
-					<button type="button" data-bs-target="#carouselGym" data-bs-slide-to="0" class="active"
-						aria-current="true"></button>
-					<button type="button" data-bs-target="#carouselGym" data-bs-slide-to="1"></button>
-				</div>
-
-				<!-- Slides -->
-				<div class="carousel-inner h-100">
-
-					<!-- Slide 1 -->
-					<div class="carousel-item active h-100 position-relative">
-						<img src="assets/images/layout/header/principal.jpg" class="slide-image d-block w-100 h-100"
-							alt="Gimnasio moderno">
-						<!-- Gradiente Oscuro -->
-						<div class="slide-gradient overlay position-absolute top-0 start-0 w-100 h-100">
-						</div>
-
-						<!-- Contenido -->
-						<div
-							class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start px-5 animate__animated animate__fadeInUp">
-							<h1 class="fw-bold mb-3 title-1">
-								<span>Bienvenido a</span><br> Nuestro Gimnasio
-							</h1>
-							<p class="mb-4">Transforma tu cuerpo, mejora tu vida. Vive la experiencia
-								fitness.</p>
-							<a href="#membresias" class="c-btn c-btn-primary shadow-lg">
-								VER PLANES
-							</a>
-						</div>
-					</div>
-
-					<!-- Slide 2 -->
-					<div class="carousel-item h-100 position-relative">
-						<img src="assets/images/layout/header/secondary.png" class="slide-image d-block w-100 h-100"
-							alt="Entrenamiento personalizado">
-						<div class="slide-gradient overlay position-absolute top-0 start-0 w-100 h-100">
-						</div>
-
-						<div
-							class="carousel-caption d-flex flex-column justify-content-center align-items-start h-100 text-start px-5 animate__animated animate__fadeInUp">
-							<h1 class="fw-bold mb-3 title-1">
-								<span>Entrena con</span><br> los Mejores
-							</h1>
-							<p class="mb-4">Planes flexibles, entrenadores expertos y resultados reales.
-							</p>
-							<a href="#clases" class="c-btn c-btn-primary shadow-lg">
-								VER CLASES
-							</a>
-						</div>
-					</div>
-				</div>
-
-				<!-- Controles -->
-				<button class="carousel-control-prev" type="button" data-bs-target="#carouselGym" data-bs-slide="prev">
-					<span class="carousel-control-prev-icon"></span>
-					<span class="visually-hidden">Anterior</span>
-				</button>
-				<button class="carousel-control-next" type="button" data-bs-target="#carouselGym" data-bs-slide="next">
-					<span class="carousel-control-next-icon"></span>
-					<span class="visually-hidden">Siguiente</span>
-				</button>
-			</div>
-		</div>
-	</header>
-
-	<section id="nosotros" class="container-fluid section-center position-relative">
-
-		<div class="row align-items-center justify-content-center g-5 w-100 px-3 px-md-5">
-			<div class="col-auto col-md-6 d-flex justify-content-center">
-				<div class="d-flex flex-column flex-sm-row flex-md-column flex-lg-row align-items-center w-100 gap-4">
-					<div class="overflow-hidden rounded-0 shadow-lg position-relative img-wrapper">
-						<img class="img-fluid" src="assets/images/layout/nosotros/nosotros1.jpg" alt="Nosotros 1">
-					</div>
-
-					<div class="overflow-hidden rounded-0 shadow-lg position-relative img-wrapper">
-						<img class="img-fluid" src="assets/images/layout/nosotros/nosotros2.jpg" alt="Nosotros 2">
-					</div>
+					<button
+						class="carousel-control-next"
+						type="button"
+						data-bs-target="#carouselGym"
+						data-bs-slide="next"
+					>
+						<span class="carousel-control-next-icon"></span>
+						<span class="visually-hidden">Siguiente</span>
+					</button>
 				</div>
 			</div>
+		</header>
 
-			<div class="col-auto col-md-6 animate__animated animate__fadeInRight">
-				<h2 class="fw-bold mb-4 title-1">
-					<span>Sobre</span> Nosotros
-				</h2>
-
-				<p class="mb-3">
-					En <strong>Animal Gym</strong> creemos que el entrenamiento no solo transforma el cuerpo,
-					sino también la mente y el estilo de vida. Nuestro gimnasio está diseñado para quienes buscan
-					superar sus límites, alcanzar sus metas y formar parte de una comunidad motivada por la disciplina
-					y la constancia.
-				</p>
-				<p class="mb-4">
-					Contamos con entrenadores especializados, programas personalizados y un ambiente moderno
-					equipado con todo lo necesario para potenciar tu rendimiento. Ya seas principiante o atleta
-					avanzado,
-					en <strong>Animal Gym</strong> encontrarás el espacio ideal para crecer y mantener un estilo de vida
-					saludable.
+		<section id="nosotros" class="nosotros section min-vh-100">
+			<div class="position-relative d-flex flex-column align-items-center text-center">
+				<h2 class="title-2 nosotros-welcome">Bienvenido a animal GYM</h2>
+				<p class="nosotros-title title-highlight mt-4">
+					DESPIERTA TU <span>INSTINTO</span>, <br />
+					<span>DOMINA</span> TUS LÍMITES.
 				</p>
 
-				<a href="#clases" class="c-btn c-btn-primary shadow-lg">
-					DESCUBRIR CLASES
-				</a>
-			</div>
-		</div>
-	</section>
-
-	<section id="clases" class="section-center">
-		<div class="container">
-			<div class="text-center mb-5">
-				<h2 class="fw-bold title-1 text-white">
-					<span>Nuestras</span> Clases
-				</h2>
-				<p>Encuentra la actividad perfecta para ti</p>
+				<div class="nosotros-subtext">
+					<h2 class="title-2 pb-2">tu campo de <span>batalla</span> diario.</h2>
+					<p>
+						En Animal Gym, no buscamos perfección, buscamos progreso real. <br />
+						Hemos diseñado un ecosistema de alto rendimiento donde la disciplina vence al talento.
+					</p>
+				</div>
 			</div>
 
-			<div class="row" id="row-container">
-				<!-- INSERTANDO CARTAS DINAMICAMENTE -->
+			<div class="vh-100" id="clip">
+				<div class="nosotros-video">
+					<video loop muted>
+						<source src="https://www.pexels.com/es-es/download/video/5498718/" type="video/mp4" />
+					</video>
+				</div>
 			</div>
+		</section>
 
-		</div>
-	</section>
+		<section id="clases" class="section-center section">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold title-1 text-white"><span>Nuestras</span> Clases</h2>
+					<p>Encuentra la actividad perfecta para ti</p>
+				</div>
 
-	<section id="entrenadores" class="section-center trainer-section">
-		<div class="container">
-
-			<div class="text-center mb-5">
-				<h2 class="fw-bold title-1 text-white">
-					<span>Nuestros</span> Entrenadores
-				</h2>
-				<p>Profesionales que te guían</p>
+				<div class="row" id="row-container">
+					<!-- INSERTANDO CARTAS DINAMICAMENTE -->
+				</div>
 			</div>
+		</section>
 
-			<div class="row justify-content-center g-4">
+		<section id="entrenadores" class="section-center section trainer-section">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold title-1 text-white"><span>Nuestros</span> Entrenadores</h2>
+					<p>Profesionales que te guían</p>
+				</div>
 
-				<div class="col-lg-4 col-md-6">
-					<div class="trainer-card text-center">
+				<div class="row justify-content-center g-4">
+					<div class="col-lg-4 col-md-6">
+						<div class="trainer-card text-center">
+							<div class="trainer-img-box">
+								<img src="assets/images/layout/entrenadores/2.png" class="trainer-img" alt="" />
+							</div>
 
-						<div class="trainer-img-box">
-							<img src="assets/images/layout/entrenadores/2.png" class="trainer-img" alt="">
-						</div>
+							<div class="trainer-content">
+								<h5 class="fw-bold text-white mb-1">Carlos Rojas</h5>
+								<p class="text-red mb-1">Entrenador de Fuerza</p>
 
-						<div class="trainer-content">
-							<h5 class="fw-bold text-white mb-1">Carlos Rojas</h5>
-							<p class="text-red mb-1">Entrenador de Fuerza</p>
+								<div class="trainer-extra">
+									<p class="text-secondary small mb-2">+7 años experiencia</p>
+									<p class="text-secondary small mb-2">Hipertrofia & rendimiento</p>
 
-							<div class="trainer-extra">
-								<p class="text-secondary small mb-2">+7 años experiencia</p>
-								<p class="text-secondary small mb-2">Hipertrofia & rendimiento</p>
-
-								<div class="trainer-social">
-									<i class="bi bi-instagram"></i>
-									<i class="bi bi-facebook"></i>
+									<div class="trainer-social">
+										<i class="bi bi-instagram"></i>
+										<i class="bi bi-facebook"></i>
+									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="trainer-card text-center">
+							<div class="trainer-img-box">
+								<img src="assets/images/layout/entrenadores/3.png" class="trainer-img" alt="" />
+							</div>
 
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="trainer-card text-center">
+							<div class="trainer-content">
+								<h5 class="fw-bold text-white mb-1">Sthefany Villa</h5>
+								<p class="text-red mb-1">Entrenadora de Cardio</p>
 
-						<div class="trainer-img-box">
-							<img src="assets/images/layout/entrenadores/3.png" class="trainer-img" alt="">
-						</div>
+								<div class="trainer-extra">
+									<p class="text-secondary small mb-2">+8 años experiencia</p>
+									<p class="text-secondary small mb-2">Resistencia & acondicionamiento físico</p>
 
-						<div class="trainer-content">
-							<h5 class="fw-bold text-white mb-1">Sthefany Villa</h5>
-							<p class="text-red mb-1">Entrenadora de Cardio</p>
-
-							<div class="trainer-extra">
-								<p class="text-secondary small mb-2">+8 años experiencia</p>
-								<p class="text-secondary small mb-2">Resistencia & acondicionamiento físico</p>
-
-								<div class="trainer-social">
-									<i class="bi bi-instagram"></i>
-									<i class="bi bi-facebook"></i>
+									<div class="trainer-social">
+										<i class="bi bi-instagram"></i>
+										<i class="bi bi-facebook"></i>
+									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="trainer-card text-center">
+							<div class="trainer-img-box">
+								<img src="assets/images/layout/entrenadores/1.png" class="trainer-img" alt="" />
+							</div>
 
-				</div>
-				<div class="col-lg-4 col-md-6">
-					<div class="trainer-card text-center">
+							<div class="trainer-content">
+								<h5 class="fw-bold text-white mb-1">Raquel Neira</h5>
+								<p class="text-red mb-1">Entrenador de Fuerza</p>
 
-						<div class="trainer-img-box">
-							<img src="assets/images/layout/entrenadores/1.png" class="trainer-img" alt="">
-						</div>
+								<div class="trainer-extra">
+									<p class="text-secondary small mb-2">+5 años experiencia</p>
+									<p class="text-secondary small mb-2">Entrenamiento funcional & bienestar</p>
 
-						<div class="trainer-content">
-							<h5 class="fw-bold text-white mb-1">Raquel Neira</h5>
-							<p class="text-red mb-1">Entrenador de Fuerza</p>
-
-							<div class="trainer-extra">
-								<p class="text-secondary small mb-2">+5 años experiencia</p>
-								<p class="text-secondary small mb-2">Entrenamiento funcional & bienestar</p>
-
-								<div class="trainer-social">
-									<i class="bi bi-instagram"></i>
-									<i class="bi bi-facebook"></i>
+									<div class="trainer-social">
+										<i class="bi bi-instagram"></i>
+										<i class="bi bi-facebook"></i>
+									</div>
 								</div>
 							</div>
 						</div>
-
 					</div>
+				</div>
+			</div>
+		</section>
 
+		<section id="maquinas" class="section-center section">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold title-1"><span>Nuestros</span> Equipos</h2>
+					<p>
+						Te ofrecemos una amplia selección de equipos de última generación para maximizar tu
+						entrenamiento.
+					</p>
 				</div>
 
-			</div>
-		</div>
-	</section>
-
-	<section id="maquinas" class="section-center">
-		<div class="container">
-			<div class="text-center mb-5">
-				<h2 class="fw-bold title-1">
-					<span>Nuestros</span> Equipos
-				</h2>
-				<p>Te ofrecemos una amplia selección de equipos de última generación para maximizar tu entrenamiento.
-				</p>
-			</div>
-
-			<div class="row g-3">
-				<div class="col-md-8">
-					<div class="row g-3">
-						<div class="col-12">
-							<div class="bg-primary position-relative overflow-hidden">
-								<img src="assets/images/layout/maquinas/mancuernas.png" class="w-100 h-100 object-fit-cover"
-									alt="mancuernas">
-								<!-- <p>Encontraras una amplia selección de mancuernas, barra y accesorios para tu entrenamiento.
+				<div class="row g-3">
+					<div class="col-md-8">
+						<div class="row g-3">
+							<div class="col-12">
+								<div class="bg-primary position-relative overflow-hidden">
+									<img
+										src="assets/images/layout/maquinas/mancuernas.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="mancuernas"
+									/>
+									<!-- <p>Encontraras una amplia selección de mancuernas, barra y accesorios para tu entrenamiento.
 								</p> -->
+								</div>
 							</div>
-						</div>
-						<div class="col-6">
-							<div class="bg-secondary">
-								<img src="assets/images/layout/maquinas/extension-pierna.png" class="w-100 h-100 object-fit-cover"
-									alt="extension-pierna">
-								<!-- <p>Equipos especializados para entrenar y fortalecer los músculos de las piernas.</p> -->
+							<div class="col-6">
+								<div class="bg-secondary">
+									<img
+										src="assets/images/layout/maquinas/extension-pierna.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="extension-pierna"
+									/>
+									<!-- <p>Equipos especializados para entrenar y fortalecer los músculos de las piernas.</p> -->
+								</div>
 							</div>
-						</div>
-						<div class="col-6">
-							<div class="bg-secondary">
-								<img src="assets/images/layout/maquinas/caminadora.png" class="w-100 h-100 object-fit-cover"
-									alt="caminadora">
-								<!-- <p>Equipos de cardio para mejorar tu resistencia y salud cardiovascular.</p> -->
+							<div class="col-6">
+								<div class="bg-secondary">
+									<img
+										src="assets/images/layout/maquinas/caminadora.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="caminadora"
+									/>
+									<!-- <p>Equipos de cardio para mejorar tu resistencia y salud cardiovascular.</p> -->
+								</div>
 							</div>
-						</div>
-						<div class="col-12">
-							<div class="bg-secondary">
-								<img src="assets/images/layout/maquinas/bicicleta-eliptica.png" class="w-100 h-100 object-fit-cover"
-									alt="bicicleta-eliptica">
-								<!-- <p>Equipos de bicicletas para entrenamiento cardiovascular.</p> -->
+							<div class="col-12">
+								<div class="bg-secondary">
+									<img
+										src="assets/images/layout/maquinas/bicicleta-eliptica.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="bicicleta-eliptica"
+									/>
+									<!-- <p>Equipos de bicicletas para entrenamiento cardiovascular.</p> -->
+								</div>
 							</div>
 						</div>
 					</div>
-				</div>
 
-				<div class="col-md-4">
-					<div class="row g-3 h-100">
-						<div class="col-12">
-							<div class="bg-secondary">
-								<img src="assets/images/layout/maquinas/equipos-crosfitt.png" class="w-100 h-100 object-fit-cover"
-									alt="equipos-crosfitt">
-								<!-- <p>Equipos especializados para el entrenamiento funcional y CrossFit.</p> -->
+					<div class="col-md-4">
+						<div class="row g-3 h-100">
+							<div class="col-12">
+								<div class="bg-secondary">
+									<img
+										src="assets/images/layout/maquinas/equipos-crosfitt.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="equipos-crosfitt"
+									/>
+									<!-- <p>Equipos especializados para el entrenamiento funcional y CrossFit.</p> -->
+								</div>
 							</div>
-						</div>
-						<div class="col-12">
-							<div class="bg-secondary">
-								<img src="assets/images/layout/maquinas/maquina-smith.png" class="w-100 h-100 object-fit-cover"
-									alt="maquina-smith">
-								<!-- <p>Maquina Smith para entrenamiento de pecho y triceps.</p> -->
+							<div class="col-12">
+								<div class="bg-secondary">
+									<img
+										src="assets/images/layout/maquinas/maquina-smith.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="maquina-smith"
+									/>
+									<!-- <p>Maquina Smith para entrenamiento de pecho y triceps.</p> -->
+								</div>
 							</div>
-						</div>
-						<div class="col-12 flex-grow-1">
-							<div class="bg-primary">
-								<img src="assets/images/layout/maquinas/press-banca.png" class="w-100 h-100 object-fit-cover"
-									alt="press-banca">
-								<!-- <p>Press de banca para entrenamiento de pecho con ajuste de ángulo.</p> -->
+							<div class="col-12 flex-grow-1">
+								<div class="bg-primary">
+									<img
+										src="assets/images/layout/maquinas/press-banca.png"
+										class="w-100 h-100 object-fit-cover"
+										alt="press-banca"
+									/>
+									<!-- <p>Press de banca para entrenamiento de pecho con ajuste de ángulo.</p> -->
+								</div>
 							</div>
 						</div>
 					</div>
 				</div>
 			</div>
-	</section>
+		</section>
 
-	<section id="product" class="section-center flex-column">
-		<h2 class="fw-bold title-1 mb-4 text-center">
-			<span>Productos</span> Nutricion
-		</h2>
-		<p class="mt-4 mb-5 text-center">Los mejores productos para entrenar</p>
-		<div class="container">
-			<div class="row g-4 justify-content-center">
+		<section id="product" class="section-center section flex-column">
+			<h2 class="fw-bold title-1 mb-4 text-center"><span>Productos</span> Nutricion</h2>
+			<p class="mt-4 mb-5 text-center">Los mejores productos para entrenar</p>
+			<div class="container">
+				<div class="row g-4 justify-content-center">
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="card product-card p-5 position-relative">
+							<h4 class="text-center fw-bold mb-4">Creatina plus fuerza de un toro</h4>
 
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="card product-card p-5 position-relative ">
-						<h4 class="text-center fw-bold mb-4">Creatina plus fuerza de un toro</h4>
+							<div class="product-container mt-5">
+								<img
+									src="assets/images/layout/productos/circulo-rojo.png"
+									class="img-fluid circle"
+									alt=""
+								/>
+								<img
+									src="assets/images/layout/productos/creatina-roja.png"
+									class="product product-one"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
 
-						<div class="product-container mt-5">
-							<img src="assets/images/layout/productos/circulo-rojo.png" class="img-fluid circle" alt="">
-							<img src="assets/images/layout/productos/creatina-roja.png" class="product product-one" alt="">
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="card product-card p-5 position-relative">
+							<h4 class="text-center fw-bold mb-4">Creatina plus fuerza de un toro</h4>
+
+							<div class="product-container mt-5">
+								<img
+									src="assets/images/layout/productos/circulo-azul.png"
+									class="img-fluid circle"
+									alt=""
+								/>
+								<img
+									src="assets/images/layout/productos/creatina-azul.png"
+									class="product product-two"
+									alt=""
+								/>
+							</div>
+						</div>
+					</div>
+
+					<div class="col-12 col-md-6 col-lg-4">
+						<div class="card product-card p-5 position-relative">
+							<h4 class="text-center fw-bold mb-4">Creatina plus fuerza de un toro</h4>
+
+							<div class="product-container mt-5">
+								<img
+									src="assets/images/layout/productos/circulo-negro.png"
+									class="img-fluid circle"
+									alt=""
+								/>
+								<img
+									src="assets/images/layout/productos/creatina-negra.png"
+									class="product product-three"
+									alt=""
+								/>
+							</div>
 						</div>
 					</div>
 				</div>
-
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="card  product-card p-5 position-relative ">
-						<h4 class="text-center fw-bold mb-4">Creatina plus fuerza de un toro</h4>
-
-						<div class="product-container mt-5">
-							<img src="assets/images/layout/productos/circulo-azul.png" class="img-fluid circle" alt="">
-							<img src="assets/images/layout/productos/creatina-azul.png" class="product product-two" alt="">
-						</div>
-					</div>
-				</div>
-
-				<div class="col-12 col-md-6 col-lg-4">
-					<div class="card product-card p-5 position-relative ">
-						<h4 class="text-center fw-bold mb-4">Creatina plus fuerza de un toro</h4>
-
-						<div class="product-container mt-5">
-							<img src="assets/images/layout/productos/circulo-negro.png" class="img-fluid circle" alt="">
-							<img src="assets/images/layout/productos/creatina-negra.png" class="product product-three" alt="">
-						</div>
-					</div>
-				</div>
-
 			</div>
-		</div>
+		</section>
 
-	</section>
-
-	<section id="memberships" class="section-center flex-column">
-		<h2 class="fw-bold title-1 mb-4 text-center">
-			<span>Nuestras</span> Membresías
-		</h2>
-		<p class="mt-4 mb-5 text-center">Elige el plan que mejor se adapte a tus metas</p>
-		<div id="memberships-splide" class="splide mt-3 container">
-			<div class="splide__track">
-				<ul class="splide__list">
-					<!-- contenido dinamico -->
-				</ul>
+		<section id="memberships" class="section-center section flex-column">
+			<h2 class="fw-bold title-1 mb-4 text-center"><span>Nuestras</span> Membresías</h2>
+			<p class="mt-4 mb-5 text-center">Elige el plan que mejor se adapte a tus metas</p>
+			<div id="memberships-splide" class="splide mt-3 container">
+				<div class="splide__track">
+					<ul class="splide__list">
+						<!-- contenido dinamico -->
+					</ul>
+				</div>
 			</div>
-		</div>
-	</section>
+		</section>
 
-	<section id="contacto" class="section-contact section-center">
-		<div class="container">
-			<div class="row g-4">
+		<section id="contacto" class="section-contact section section-center">
+			<div class="container">
+				<div class="row g-4">
+					<div class="col-md-6">
+						<div class="p-4 p-md-5 shadow-lg contact-box">
+							<h3 class="fw-bold mb-4 title-3 text-uppercase text-white">¡Contáctanos!</h3>
 
-				<div class="col-md-6">
-					<div class="p-4 p-md-5 shadow-lg contact-box">
-						<h3 class="fw-bold mb-4 title-3 text-uppercase text-white">¡Contáctanos!</h3>
+							<form class="d-flex flex-column">
+								<div class="mb-3">
+									<label for="nombre" class="form-label text-secondary">Nombre</label>
+									<input
+										type="text"
+										id="nombre"
+										class="c-form-control"
+										placeholder="Tu nombre completo"
+									/>
+								</div>
 
-						<form class="d-flex flex-column">
-							<div class="mb-3">
-								<label for="nombre" class="form-label text-secondary">Nombre</label>
-								<input type="text" id="nombre" class="c-form-control" placeholder="Tu nombre completo">
+								<div class="mb-3">
+									<label for="email" class="form-label text-secondary">Email</label>
+									<input
+										type="email"
+										id="email"
+										class="c-form-control"
+										placeholder="tu@email.com"
+									/>
+								</div>
+
+								<div class="mb-4">
+									<label for="mensaje" class="form-label text-secondary">Mensaje</label>
+									<textarea
+										id="mensaje"
+										class="c-form-control"
+										rows="5"
+										placeholder="Escribe tu mensaje aquí..."
+									></textarea>
+								</div>
+
+								<button type="submit" class="c-btn c-btn-primary w-100 align-self-start">
+									<i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
+								</button>
+							</form>
+						</div>
+					</div>
+
+					<div class="col-md-6">
+						<div
+							class="p-4 p-md-5 shadow-lg h-100 contact-box d-flex flex-column justify-content-between"
+						>
+							<div>
+								<div class="d-flex align-items-center mb-4">
+									<div class="contact-icon me-3">
+										<i class="bi bi-telephone text-white"></i>
+									</div>
+									<div>
+										<h6 class="fw-bold text-white mb-1">Llámanos</h6>
+										<p class="text-secondary mb-0">+51 987 654 321</p>
+									</div>
+								</div>
+
+								<div class="d-flex align-items-center mb-4">
+									<div class="contact-icon me-3">
+										<i class="bi bi-geo-alt-fill text-white"></i>
+									</div>
+									<div>
+										<h6 class="fw-bold text-white mb-1">Dirección</h6>
+										<p class="text-secondary mb-0">Lima, Ate - Santa Clara</p>
+									</div>
+								</div>
+
+								<div class="d-flex align-items-center">
+									<div class="contact-icon me-3">
+										<i class="bi bi-clock text-white"></i>
+									</div>
+									<div>
+										<h6 class="fw-bold text-white mb-1">Horarios</h6>
+										<p class="text-secondary mb-0">Lun-Vie: 6AM-10PM<br />Sáb-Dom: 7AM-8PM</p>
+									</div>
+								</div>
 							</div>
 
-							<div class="mb-3">
-								<label for="email" class="form-label text-secondary">Email</label>
-								<input type="email" id="email" class="c-form-control" placeholder="tu@email.com">
+							<div class="mt-4 contact-map">
+								<iframe
+									src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3346494781736!2d-76.92474492404258!3d-12.046389441514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c734c6b4b507%3A0x37c0c94a6820a5f5!2sAte%2C%20Lima%2C%20Peru!5e0!3m2!1sen!2sus!4v1697365200000!5m2!1sen!2sus"
+									width="100%"
+									height="100%"
+									loading="lazy"
+								></iframe>
 							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
 
-							<div class="mb-4">
-								<label for="mensaje" class="form-label text-secondary">Mensaje</label>
-								<textarea id="mensaje" class="c-form-control" rows="5"
-									placeholder="Escribe tu mensaje aquí..."></textarea>
-							</div>
+		<footer class="text-white section">
+			<div class="container">
+				<div
+					class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-4"
+				>
+					<img src="assets/images/logo.png" alt="Logo Gym" class="footer-logo img-fluid" />
+					<a href="#nosotros" class="c-btn c-btn-primary shadow-lg">Sobre nosotros</a>
+				</div>
+				<hr class="border-secondary" />
+				<div class="row text-center text-md-start">
+					<div class="col-12 col-md-4 mb-4">
+						<h4 class="fw-bold text-uppercase mb-3">Información</h4>
+						<p>
+							Ir regularmente al gimnasio es genial, pero no te preocupes si no puedes encontrar un
+							gran espacio de tiempo para hacer ejercicio todos los días.
+						</p>
+						<div
+							class="d-flex gap-2 mt-3 flex-wrap justify-content-center justify-content-md-start"
+						>
+							<a href="#" class="btn btn-outline-light rounded">
+								<i class="bi bi-facebook color-primary fw-bold fs-5"></i>
+							</a>
+							<a href="#" class="btn btn-outline-light rounded">
+								<i class="bi bi-instagram color-primary fs-5"></i>
+							</a>
+							<a href="#" class="btn btn-outline-light rounded">
+								<i class="bi bi-twitter-x color-primary fs-5"></i>
+							</a>
+						</div>
+					</div>
 
-							<button type="submit" class="c-btn c-btn-primary w-100 align-self-start">
-								<i class="fas fa-paper-plane me-2"></i>Enviar Mensaje
-							</button>
+					<div class="col-12 col-md-4 mb-4">
+						<h4 class="fw-bold text-uppercase mb-3">Contáctanos</h4>
+						<p><i class="bi bi-geo-alt-fill color-primary me-2 fs-5"></i>Lima, Ate - SantaClara</p>
+						<p><i class="bi bi-telephone color-primary me-2 fs-5"></i>987 654 321</p>
+						<p><i class="bi bi-envelope color-primary me-2 fs-5"></i>AnimalGym@gmail.com</p>
+					</div>
+
+					<div class="col-12 col-md-4 mb-4">
+						<h4 class="fw-bold text-uppercase mb-3">Recibir promociones</h4>
+						<p>Déjanos tu email y entérate primero de las ofertas</p>
+						<form class="d-flex flex-column flex-sm-row gap-2 mt-3">
+							<input type="email" class="c-form-control" placeholder="Ingresa tu correo" />
+							<button class="c-btn c-btn-primary" type="submit">Enviar</button>
 						</form>
 					</div>
 				</div>
 
-				<div class="col-md-6">
-					<div class="p-4 p-md-5 shadow-lg h-100 contact-box d-flex flex-column justify-content-between">
+				<hr class="border-secondary" />
 
-						<div>
-							<div class="d-flex align-items-center mb-4">
-								<div class="contact-icon me-3">
-									<i class="bi bi-telephone text-white"></i>
-								</div>
-								<div>
-									<h6 class="fw-bold text-white mb-1">Llámanos</h6>
-									<p class="text-secondary mb-0">+51 987 654 321</p>
-								</div>
-							</div>
-
-							<div class="d-flex align-items-center mb-4">
-								<div class="contact-icon me-3">
-									<i class="bi bi-geo-alt-fill text-white"></i>
-								</div>
-								<div>
-									<h6 class="fw-bold text-white mb-1">Dirección</h6>
-									<p class="text-secondary mb-0">Lima, Ate - Santa Clara</p>
-								</div>
-							</div>
-
-							<div class="d-flex align-items-center">
-								<div class="contact-icon me-3">
-									<i class="bi bi-clock text-white"></i>
-								</div>
-								<div>
-									<h6 class="fw-bold text-white mb-1">Horarios</h6>
-									<p class="text-secondary mb-0">Lun-Vie: 6AM-10PM<br>Sáb-Dom: 7AM-8PM</p>
-								</div>
-							</div>
-						</div>
-
-						<div class="mt-4 contact-map">
-							<iframe
-								src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3901.3346494781736!2d-76.92474492404258!3d-12.046389441514!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9105c734c6b4b507%3A0x37c0c94a6820a5f5!2sAte%2C%20Lima%2C%20Peru!5e0!3m2!1sen!2sus!4v1697365200000!5m2!1sen!2sus"
-								width="100%" height="100%" loading="lazy"></iframe>
-						</div>
-
-					</div>
-				</div>
-
+				<p class="text-center small mb-0">2025 Animal Gym. Todos los derechos reservados.</p>
 			</div>
-		</div>
-	</section>
+		</footer>
 
-	<footer class="text-white">
-		<div class="container">
-			<div class="d-flex flex-column flex-md-row justify-content-between align-items-center gap-3 py-4">
-				<img src="assets/images/logo.png" alt="Logo Gym" class="footer-logo img-fluid">
-				<a href="#nosotros" class="c-btn c-btn-primary shadow-lg">Sobre nosotros</a>
-			</div>
-			<hr class="border-secondary">
-			<div class="row text-center text-md-start">
-				<div class="col-12 col-md-4 mb-4">
-					<h4 class="fw-bold text-uppercase mb-3">Información</h4>
-					<p>
-						Ir regularmente al gimnasio es genial, pero no te preocupes si no puedes encontrar
-						un gran espacio de tiempo para hacer ejercicio todos los días.
-					</p>
-					<div class="d-flex gap-2 mt-3 flex-wrap justify-content-center justify-content-md-start">
-						<a href="#" class="btn btn-outline-light rounded">
-							<i class="bi bi-facebook color-primary fw-bold fs-5"></i>
-						</a>
-						<a href="#" class="btn btn-outline-light rounded">
-							<i class="bi bi-instagram color-primary fs-5"></i>
-						</a>
-						<a href="#" class="btn btn-outline-light rounded">
-							<i class="bi bi-twitter-x color-primary fs-5"></i>
-						</a>
-					</div>
-				</div>
+		<button type="button" class="c-btn c-btn-primary btn-back-to-top shadow" id="btnBackToTop">
+			<i class="bi bi-arrow-up"></i>
+		</button>
 
-				<div class="col-12 col-md-4 mb-4">
-					<h4 class="fw-bold text-uppercase mb-3">Contáctanos</h4>
-					<p><i class="bi bi-geo-alt-fill color-primary me-2 fs-5"></i>Lima, Ate -
-						SantaClara</p>
-					<p><i class="bi bi-telephone color-primary me-2 fs-5"></i>987 654 321</p>
-					<p><i class="bi bi-envelope color-primary me-2 fs-5"></i>AnimalGym@gmail.com</p>
-				</div>
-
-				<div class="col-12 col-md-4 mb-4">
-					<h4 class="fw-bold text-uppercase mb-3">Recibir promociones</h4>
-					<p>Déjanos tu email y entérate primero de las ofertas</p>
-					<form class="d-flex flex-column flex-sm-row gap-2 mt-3">
-						<input type="email" class="c-form-control" placeholder="Ingresa tu correo">
-						<button class="c-btn c-btn-primary" type="submit">Enviar</button>
-					</form>
-				</div>
-			</div>
-
-			<hr class="border-secondary">
-
-			<p class="text-center small mb-0">2025 Animal Gym. Todos los derechos reservados.</p>
-		</div>
-	</footer>
-
-	<button type="button" class="c-btn c-btn-primary btn-back-to-top shadow" id="btnBackToTop">
-		<i class="bi bi-arrow-up"></i>
-	</button>
-
-	<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
-		integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
-		crossorigin="anonymous"></script>
-	<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
-	<script type="module" src="js/main.js">
-	</script>
-</body>
-
+		<script
+			src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.8/dist/js/bootstrap.bundle.min.js"
+			integrity="sha384-FKyoEForCGlyvwx9Hj09JcYn3nv7wiPVlz7YYwJrWVcXK/BmnVDxM+D2scQbITxI"
+			crossorigin="anonymous"
+		></script>
+		<script src="https://cdn.jsdelivr.net/npm/@splidejs/splide@4/dist/js/splide.min.js"></script>
+		<script type="module" src="js/main.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/gsap.min.js"></script>
+		<script src="https://cdn.jsdelivr.net/npm/gsap@3.15/dist/ScrollTrigger.min.js"></script>
+		<script src="./js/nosotros.js"></script>
+	</body>
 </html>
