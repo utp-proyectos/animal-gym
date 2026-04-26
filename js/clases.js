@@ -3,37 +3,37 @@ const clasesGym = [
 	{
 		titulo: 'Spinning',
 		descripcion: 'Clases de ciclismo indoor',
-		imagen: 'images/layout/clases/clase1.jpg',
+		imagen: 'assets/images/layout/clases/clase1.jpg',
 		icono: 'bi-bicycle',
 	},
 	{
 		titulo: 'Pilates',
 		descripcion: 'Clases de pilates con ejercicios de core',
-		imagen: 'images/layout/clases/clase2.jpg',
+		imagen: 'assets/images/layout/clases/clase2.jpg',
 		icono: 'bi-person-arms-up',
 	},
 	{
 		titulo: 'Boxeo Fitness',
 		descripcion: 'Entrenamiento de boxeo y cardio',
-		imagen: 'images/layout/clases/clase3.jpg',
+		imagen: 'assets/images/layout/clases/clase3.jpg',
 		icono: 'bi-hand-thumbs-up-fill',
 	},
 	{
 		titulo: 'Yoga Matutino',
 		descripcion: 'Clase de yoga para principiantes.',
-		imagen: 'images/layout/clases/clase5.jpg',
+		imagen: 'assets/images/layout/clases/clase5.jpg',
 		icono: 'bi-peace',
 	},
 	{
 		titulo: 'Crossfit',
 		descripcion: 'Entrenamiento funcional',
-		imagen: 'images/layout/clases/clase4.jpg',
+		imagen: 'assets/images/layout/clases/clase4.jpg',
 		icono: 'bi-bar-chart-line',
 	},
 	{
 		titulo: 'Zumba',
 		descripcion: 'Clase de baile fitness.',
-		imagen: 'images/layout/clases/clases6.jpg',
+		imagen: 'assets/images/layout/clases/clases6.jpg',
 		icono: 'bi-music-note-beamed',
 	},
 ]
