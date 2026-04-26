@@ -1,0 +1,27 @@
+@use '../utilities/variables' as *;
+
+.contacto-section {
+	background-color: $bg-body;
+}
+
+.contact-box {
+	background-color: $bg-body;
+}
+
+.contact-icon {
+	width: 55px;
+	height: 55px;
+	background-color: $color-primary;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+
+.contact-map {
+	min-height: 300px;
+
+	iframe {
+		border: 0;
+		filter: grayscale(100%) brightness(0.6);
+	}
+}
