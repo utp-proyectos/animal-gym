@@ -235,6 +235,43 @@ p {
   background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 }
 
+.hero {
+  position: relative;
+  height: 100dvh;
+}
+.hero-video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+.hero-wrapper {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image: linear-gradient(90deg, #000 10%, rgba(0, 0, 0, 0.3) 100%);
+}
+@media screen and (max-width: 768px) {
+  .hero-wrapper {
+    background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+  }
+}
+.hero-content {
+  height: 100%;
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+}
+@media screen and (max-width: 768px) {
+  .hero-content {
+    align-items: center;
+    text-align: center;
+  }
+}
+
 .nosotros-welcome {
   font-size: 10px;
   letter-spacing: 30%;
@@ -278,6 +315,11 @@ p {
   top: 5dvh;
   left: 50%;
   transform: translateX(-50%);
+}
+@media screen and (max-width: 768px) {
+  .nosotros-video {
+    width: 300px;
+  }
 }
 .nosotros-video video {
   width: 100%;
@@ -440,7 +482,9 @@ p {
   z-index: 10;
   color: #fff;
   font-weight: 900;
-  font-size: 1.5rem;
+  font-size: 1.1rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
 }
 .product-card:hover .product-name {
   opacity: 1;

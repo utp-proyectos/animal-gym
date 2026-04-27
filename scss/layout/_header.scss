@@ -9,3 +9,40 @@
 		background: linear-gradient(180deg, rgba(0, 0, 0, 0.6) 0%, rgba(0, 0, 0, 0.8) 100%);
 	}
 }
+
+.hero {
+	position: relative;
+	height: 100dvh;
+	&-video {
+		width: 100%;
+		height: 100%;
+		object-fit: cover;
+		display: block;
+	}
+
+	&-wrapper {
+		position: absolute;
+		top: 0;
+		left: 0;
+		width: 100%;
+		height: 100%;
+		background-image: linear-gradient(90deg, #000 10%, rgba(0, 0, 0, 0.3) 100%);
+
+		@media screen and (max-width: 768px) {
+			background-image: linear-gradient(90deg, rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7));
+		}
+	}
+
+	&-content {
+		height: 100%;
+		display: flex;
+		align-items: flex-start;
+		justify-content: center;
+		flex-direction: column;
+
+		@media screen and (max-width: 768px) {
+			align-items: center;
+			text-align: center;
+		}
+	}
+}
