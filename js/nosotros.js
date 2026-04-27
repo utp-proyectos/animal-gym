@@ -5,7 +5,7 @@ export const aboutUsAnimation = () => {
 		scrollTrigger: {
 			trigger: '#clip',
 			start: 'top top',
-			end: '+=1500',
+			end: '+=1200',
 			scrub: 0.5,
 			pin: true,
 			invalidateOnRefresh: true,
@@ -18,6 +18,7 @@ export const aboutUsAnimation = () => {
 			width: '100%',
 			height: '100dvh',
 			top: 0,
+			duration: 1,
 		},
 		0
 	)
@@ -37,5 +38,14 @@ export const aboutUsAnimation = () => {
 			duration: 0.2,
 		},
 		0
+	)
+
+	tl.to(
+		'body',
+		{
+			backgroundColor: '#0a0a0a',
+			duration: 0.75,
+		},
+		0.2
 	)
 }

@@ -2,13 +2,15 @@
 	&-welcome {
 		font-size: 10px;
 		letter-spacing: 30%;
+		color: #000000;
+		font-weight: bold;
 	}
 
 	&-title {
 		font-size: 4rem;
 		font-weight: 900;
-		color: white;
-		line-height: 120%;
+		color: #000000;
+		line-height: 80%;
 
 		@media screen and (max-width: 1024px) {
 			font-size: 3.5rem;
@@ -24,19 +26,20 @@
 		bottom: -90dvh;
 
 		h2 {
-			font-size: 0.8rem;
+			font-size: 1rem;
 			letter-spacing: 20%;
-			font-weight: bold;
+			font-weight: 900;
+			color: #000000;
 		}
 		p {
-			color: #81858e;
+			color: rgba(0, 0, 0, 0.6);
 		}
 	}
 
 	&-video {
-		width: 300px;
 		height: 60dvh;
-		clip-path: polygon(0 0, 75% 15%, 100% 100%, 0 90%);
+		aspect-ratio: 3 / 4;
+		clip-path: polygon(0 0, 89% 11%, 100% 96%, 0 100%);
 		position: absolute;
 		top: 5dvh;
 		left: 50%;
