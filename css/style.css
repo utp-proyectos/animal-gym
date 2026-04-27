@@ -45,7 +45,7 @@ body {
   font-size: 16px;
   line-height: 1.5;
   color: #6c757d;
-  background-color: #000000;
+  background-color: #0a0a0a;
 }
 
 p {
@@ -285,20 +285,32 @@ p {
 
 .machine-grid {
   display: grid;
+  grid-template: repeat(6, 1fr)/repeat(13, 1fr);
   grid-template-areas: "m1 m1 m1 m1 m2 m2 m2 m2 m2 m3 m3 m3 m3" "m1 m1 m1 m1 m2 m2 m2 m2 m2 m3 m3 m3 m3" "m1 m1 m1 m1 m4 m4 m4 m4 m4 m4 m5 m5 m5" "m6 m6 m6 m6 m4 m4 m4 m4 m4 m4 m5 m5 m5" "m6 m6 m6 m6 m7 m7 m8 m8 m8 m8 m8 m8 m8" "m6 m6 m6 m6 m7 m7 m8 m8 m8 m8 m8 m8 m8";
-  gap: 32px;
-  height: 100vh;
+  gap: 20px;
+  height: 100dvh;
+}
+@media screen and (max-width: 992px) {
+  .machine-grid {
+    grid-template: repeat(8, 1fr)/repeat(13, 1fr);
+    grid-template-areas: "m1 m1 m1 m1 m1 m1 m3 m3 m3 m3 m3 m3 m3" "m1 m1 m1 m1 m1 m1 m3 m3 m3 m3 m3 m3 m3" "m2 m2 m2 m2 m2 m4 m4 m4 m4 m4 m4 m4 m4" "m2 m2 m2 m2 m2 m4 m4 m4 m4 m4 m4 m4 m4" "m5 m5 m5 m5 m5 m5 m6 m6 m6 m6 m6 m6 m6" "m5 m5 m5 m5 m5 m5 m6 m6 m6 m6 m6 m6 m6" "m7 m7 m7 m7 m7 m7 m7 m8 m8 m8 m8 m8 m8" "m7 m7 m7 m7 m7 m7 m7 m8 m8 m8 m8 m8 m8";
+  }
+}
+@media screen and (max-width: 576px) {
+  .machine-grid .machine-card-content {
+    visibility: hidden;
+  }
 }
 .machine-card {
   border-radius: 12px;
-  overflow: hidden;
 }
 .machine-card-tilt {
+  border-radius: 12px;
   width: 100%;
   height: 100%;
+  overflow: hidden;
 }
 .machine-card-img {
-  border-radius: 12px;
   width: 100%;
   height: 100%;
   display: block;
@@ -317,6 +329,7 @@ p {
   display: flex;
   flex-direction: column;
   justify-content: flex-end;
+  opacity: 0;
 }
 .machine-card-title {
   font-size: 1rem;
@@ -329,7 +342,8 @@ p {
   opacity: 0.8;
 }
 .machine-card:hover .machine-card-content {
-  bottom: 0;
+  bottom: -10px;
+  opacity: 1;
 }
 .machine-card:nth-child(1) {
   grid-area: m1;
@@ -358,7 +372,7 @@ p {
 
 .custom-card {
   max-width: 320px;
-  background: linear-gradient(to bottom, #000000, #141414);
+  background: linear-gradient(to bottom, #0a0a0a, #141414);
 }
 
 .popular-membership {
@@ -375,10 +389,12 @@ p {
   }
 }
 .product-card {
+  width: 100%;
+  max-width: 300px;
   height: 400px;
   background-color: #212529;
   position: relative;
-  border-radius: 12px;
+  border-radius: 20px;
   transform-style: preserve-3d;
 }
 .product-card::before, .product-card::after {
@@ -393,7 +409,7 @@ p {
   content: "ANIMAL";
   top: 20px;
   left: 20px;
-  font-size: 5em;
+  font-size: 4em;
 }
 .product-card::after {
   content: "GYM";
@@ -417,7 +433,7 @@ p {
   z-index: 10;
   color: #fff;
   font-weight: 900;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
 }
 .product-card:hover .product-name {
   opacity: 1;
@@ -427,11 +443,12 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 200px;
-  height: 200px;
+  width: 220px;
+  height: 220px;
   border-radius: 50%;
   transform-style: preserve-3d;
   transform: translate3d(-50%, -50%, 50px);
+  transition: 0.5s;
   z-index: 10;
 }
 .product-circle-1 {
@@ -443,42 +460,75 @@ p {
 .product-circle-3 {
   background-color: rgb(20, 20, 20);
 }
+.product-card:hover .product-circle {
+  width: 200px;
+  height: 200px;
+}
 .product {
   position: absolute;
   top: 50%;
   left: 50%;
-  max-width: 150px;
+  width: 150px;
   transform-style: preserve-3d;
   transform: translate3d(-50%, -50%, 50px);
   transition: 0.5s;
   z-index: 11;
 }
 .product-card:hover .product {
-  transform: translate3d(-50%, -50%, 100px) rotate(15deg);
+  transform: translate3d(-50%, -50%, 100px) rotate(15deg) scale(1.1);
 }
 
-.clases-section {
-  background-color: #000000;
+.class-grid {
+  display: grid;
+  grid-template-columns: repeat(7, 1fr);
+  grid-template-rows: repeat(6, 1fr);
+  grid-template-areas: "c1 c1 c1 c1 c2 c2 c2" "c1 c1 c1 c1 c2 c2 c2" "c3 c3 c4 c4 c2 c2 c2" "c3 c3 c4 c4 c2 c2 c2" "c5 c5 c5 c5 c5 c6 c6" "c5 c5 c5 c5 c5 c6 c6";
+  gap: 20px;
+  height: 100dvh;
 }
-
+@media screen and (max-width: 768px) {
+  .class-grid {
+    grid-template-areas: "c1 c1 c2 c2 c2 c2 c2" "c1 c1 c2 c2 c2 c2 c2" "c3 c3 c3 c4 c4 c4 c4" "c3 c3 c3 c4 c4 c4 c4" "c5 c5 c5 c5 c5 c6 c6" "c5 c5 c5 c5 c5 c6 c6";
+    height: 100dvh;
+  }
+}
 .class-card {
-  height: 280px;
+  border-radius: 12px;
   cursor: pointer;
   transition: all 0.3s ease;
+  border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .class-card:hover {
   transform: translateY(-5px);
 }
+.class-card:nth-child(1) {
+  grid-area: c1;
+}
+.class-card:nth-child(2) {
+  grid-area: c2;
+}
+.class-card:nth-child(3) {
+  grid-area: c3;
+}
+.class-card:nth-child(4) {
+  grid-area: c4;
+}
+.class-card:nth-child(5) {
+  grid-area: c5;
+}
+.class-card:nth-child(6) {
+  grid-area: c6;
+}
 .class-card:hover .class-overlay {
   opacity: 1;
 }
-
 .class-img {
   width: 100%;
   height: 100%;
   object-fit: cover;
+  object-position: center;
+  display: block;
 }
-
 .class-footer {
   position: absolute;
   bottom: 0;
@@ -487,21 +537,48 @@ p {
   background: rgba(0, 0, 0, 0.7);
   display: flex;
   align-items: center;
+  backdrop-filter: blur(10px);
 }
-
+.class-footer h5 {
+  font-size: 0.8rem;
+  font-weight: 900;
+  letter-spacing: 2px;
+  text-transform: uppercase;
+}
+@media screen and (max-width: 768px) {
+  .class-footer {
+    height: 50px;
+  }
+  .class-footer h5 {
+    font-size: 0.7rem;
+  }
+}
 .class-icon {
   position: absolute;
-  left: 20px;
-  bottom: 15px;
-  width: 60px;
-  height: 60px;
+  left: 10px;
+  top: -10px;
+  width: 40px;
+  height: 40px;
   background: #b4001a;
   display: flex;
   align-items: center;
   justify-content: center;
   box-shadow: 0 4px 10px rgba(0, 0, 0, 0.3);
 }
-
+.class-icon i {
+  font-size: 1.5rem;
+}
+@media screen and (max-width: 768px) {
+  .class-icon {
+    left: 5px;
+    top: -5px;
+    width: 30px;
+    height: 30px;
+  }
+  .class-icon i {
+    font-size: 0.8rem;
+  }
+}
 .class-overlay {
   position: absolute;
   top: 0;
@@ -520,11 +597,11 @@ p {
 }
 
 .trainer-section {
-  background-color: #000000;
+  background-color: #0a0a0a;
 }
 
 .trainer-card {
-  background-color: #000000;
+  background-color: #0a0a0a;
   padding: 1.5rem 1rem 1.2rem;
   transition: all 0.3s ease;
 }
@@ -579,11 +656,11 @@ p {
   }
 }
 .section-contact {
-  background-color: #000000;
+  background-color: #0a0a0a;
 }
 
 .contact-box {
-  background-color: #000000;
+  background-color: #0a0a0a;
 }
 
 .contact-icon {

@@ -1,5 +1,3 @@
-const videoRef = document.querySelector('.nosotros-video video')
-
 export const aboutUsAnimation = () => {
 	gsap.registerPlugin(ScrollTrigger)
 	// gsap code here!
@@ -10,10 +8,6 @@ export const aboutUsAnimation = () => {
 			end: '+=1500',
 			scrub: 0.5,
 			pin: true,
-			onEnter: () => videoRef.play(),
-			onEnterBack: () => videoRef.play(),
-			onLeave: () => videoRef.pause(),
-			onLeaveBack: () => videoRef.pause(),
 			invalidateOnRefresh: true,
 		},
 	})
@@ -22,7 +16,7 @@ export const aboutUsAnimation = () => {
 		'.nosotros-video',
 		{
 			width: '100%',
-			height: '100vh',
+			height: '100dvh',
 			top: 0,
 		},
 		0
