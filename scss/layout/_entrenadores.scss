@@ -36,14 +36,12 @@
 
 .trainer-extra {
 	opacity: 0;
-	max-height: 0;
-	overflow: hidden;
+	height: 0;
 	transition: all 0.3s ease;
 }
 
 .trainer-card:hover .trainer-extra {
 	opacity: 1;
-	max-height: 200px;
 }
 
 .trainer-social i {

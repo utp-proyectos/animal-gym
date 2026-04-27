@@ -2,22 +2,22 @@
 
 .c-btn {
 	display: inline-block;
-	padding: 15px 16px;
-	font-size: $fs-body-md;
-	font-weight: 700;
+	padding: 8px 20px;
+	font-size: $fs-body-sm;
+	font-weight: 500;
 	border-radius: 4px;
 	border: none;
 	cursor: pointer;
-	transition: 0.2s ease;
+	transition: 0.3s ease;
 	text-decoration: none;
 	color: $text-primary;
-}
 
-.c-btn-primary {
-	background: $color-primary;
-	color: $text-primary;
+	&-primary {
+		background: $color-primary;
+		color: $text-primary;
 
-	&:hover {
-		background: $color-secondary;
+		&:hover {
+			background: $color-secondary;
+		}
 	}
 }

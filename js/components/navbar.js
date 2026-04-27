@@ -14,8 +14,10 @@ export const initNavbarScroll = () => {
 
 		if (currentScroll > lastScroll && currentScroll > 80) {
 			navbar.classList.add('navbar-hidden')
+			btnBackToTop.classList.remove('active')
 		} else {
 			navbar.classList.remove('navbar-hidden')
+			btnBackToTop.classList.add('active')
 		}
 
 		if (btnBackToTop) {

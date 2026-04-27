@@ -1,7 +1,6 @@
 const videoRef = document.querySelector('.nosotros-video video')
-console.log(videoRef)
 
-document.addEventListener('DOMContentLoaded', (event) => {
+export const aboutUsAnimation = () => {
 	gsap.registerPlugin(ScrollTrigger)
 	// gsap code here!
 	const tl = gsap.timeline({
@@ -45,4 +44,4 @@ document.addEventListener('DOMContentLoaded', (event) => {
 		},
 		0
 	)
-})
+}
