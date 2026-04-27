@@ -6,7 +6,7 @@ body {
 	font-size: $fs-body-md;
 	line-height: 1.5;
 	color: $text-secondary;
-	background-color: $bg-body;
+	background-color: hsl(240, 10%, 90%);
 }
 
 p {
@@ -88,7 +88,7 @@ p {
 }
 
 .section {
-	padding-top: 10rem;
+	padding-top: 8rem;
 }
 
 .section-center {

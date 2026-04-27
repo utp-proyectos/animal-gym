@@ -160,8 +160,15 @@
 		<section id="nosotros" class="nosotros section min-vh-100">
 			<div class="position-relative d-flex flex-column align-items-center text-center">
 				<h2 class="title-2 nosotros-welcome">Bienvenido a animal GYM</h2>
-				<p class="nosotros-title title-highlight mt-4" data-aos="fade-up-left">
-					DESPIERTA TU <span>INSTINTO</span>, <br />
+				<p class="nosotros-title title-highlight mt-5" id="about-us-title" data-aos="fade-up-left">
+					DESPIERTA TU <span>INSTINTO</span>,
+				</p>
+				<p
+					class="nosotros-title title-highlight"
+					data-aos="fade-up-left"
+					data-aos-delay="100"
+					data-aos-anchor="#about-us-title"
+				>
 					<span>DOMINA</span> TUS LÍMITES.
 				</p>
 
@@ -177,99 +184,8 @@
 			<div class="vh-100" id="clip">
 				<div class="nosotros-video">
 					<video autoplay loop muted>
-						<source src="https://www.pexels.com/es-es/download/video/34668838/" type="video/mp4" />
+						<source src="./assets/videos/gym-entrance.mp4" type="video/mp4" />
 					</video>
-				</div>
-			</div>
-		</section>
-
-		<section id="clases" class="section-center section">
-			<div class="container">
-				<div class="text-center mb-5">
-					<h2 class="fw-bold title-1 text-white"><span>Nuestras</span> Clases</h2>
-					<p>Encuentra la actividad perfecta para ti</p>
-				</div>
-
-				<div class="class-grid" id="classes-container">
-					<!-- INSERTANDO CARTAS DINAMICAMENTE -->
-				</div>
-			</div>
-		</section>
-
-		<section id="entrenadores" class="section-center section trainer-section">
-			<div class="container">
-				<div class="text-center mb-5">
-					<h2 class="fw-bold title-1 text-white"><span>Nuestros</span> Entrenadores</h2>
-					<p>Profesionales que te guían</p>
-				</div>
-
-				<div class="row justify-content-center g-4">
-					<div class="col-lg-4 col-md-6">
-						<div class="trainer-card text-center">
-							<div class="trainer-img-box">
-								<img src="assets/images/layout/entrenadores/2.png" class="trainer-img" alt="" />
-							</div>
-
-							<div class="trainer-content">
-								<h5 class="fw-bold text-white mb-1">Carlos Rojas</h5>
-								<p class="text-red mb-1">Entrenador de Fuerza</p>
-
-								<div class="trainer-extra">
-									<p class="text-secondary small mb-2">+7 años experiencia</p>
-									<p class="text-secondary small mb-2">Hipertrofia & rendimiento</p>
-
-									<div class="trainer-social">
-										<i class="bi bi-instagram"></i>
-										<i class="bi bi-facebook"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="trainer-card text-center">
-							<div class="trainer-img-box">
-								<img src="assets/images/layout/entrenadores/3.png" class="trainer-img" alt="" />
-							</div>
-
-							<div class="trainer-content">
-								<h5 class="fw-bold text-white mb-1">Sthefany Villa</h5>
-								<p class="text-red mb-1">Entrenadora de Cardio</p>
-
-								<div class="trainer-extra">
-									<p class="text-secondary small mb-2">+8 años experiencia</p>
-									<p class="text-secondary small mb-2">Resistencia & acondicionamiento físico</p>
-
-									<div class="trainer-social">
-										<i class="bi bi-instagram"></i>
-										<i class="bi bi-facebook"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
-					<div class="col-lg-4 col-md-6">
-						<div class="trainer-card text-center">
-							<div class="trainer-img-box">
-								<img src="assets/images/layout/entrenadores/1.png" class="trainer-img" alt="" />
-							</div>
-
-							<div class="trainer-content">
-								<h5 class="fw-bold text-white mb-1">Raquel Neira</h5>
-								<p class="text-red mb-1">Entrenador de Fuerza</p>
-
-								<div class="trainer-extra">
-									<p class="text-secondary small mb-2">+5 años experiencia</p>
-									<p class="text-secondary small mb-2">Entrenamiento funcional & bienestar</p>
-
-									<div class="trainer-social">
-										<i class="bi bi-instagram"></i>
-										<i class="bi bi-facebook"></i>
-									</div>
-								</div>
-							</div>
-						</div>
-					</div>
 				</div>
 			</div>
 		</section>
@@ -460,6 +376,97 @@
 							</div>
 						</div>
 					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="entrenadores" class="section-center section trainer-section">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold title-1 text-white"><span>Nuestros</span> Entrenadores</h2>
+					<p>Profesionales que te guían</p>
+				</div>
+
+				<div class="row justify-content-center g-4">
+					<div class="col-lg-4 col-md-6">
+						<div class="trainer-card text-center">
+							<div class="trainer-img-box">
+								<img src="assets/images/layout/entrenadores/2.png" class="trainer-img" alt="" />
+							</div>
+
+							<div class="trainer-content">
+								<h5 class="fw-bold text-white mb-1">Carlos Rojas</h5>
+								<p class="text-red mb-1">Entrenador de Fuerza</p>
+
+								<div class="trainer-extra">
+									<p class="text-secondary small mb-2">+7 años experiencia</p>
+									<p class="text-secondary small mb-2">Hipertrofia & rendimiento</p>
+
+									<div class="trainer-social">
+										<i class="bi bi-instagram"></i>
+										<i class="bi bi-facebook"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="trainer-card text-center">
+							<div class="trainer-img-box">
+								<img src="assets/images/layout/entrenadores/3.png" class="trainer-img" alt="" />
+							</div>
+
+							<div class="trainer-content">
+								<h5 class="fw-bold text-white mb-1">Sthefany Villa</h5>
+								<p class="text-red mb-1">Entrenadora de Cardio</p>
+
+								<div class="trainer-extra">
+									<p class="text-secondary small mb-2">+8 años experiencia</p>
+									<p class="text-secondary small mb-2">Resistencia & acondicionamiento físico</p>
+
+									<div class="trainer-social">
+										<i class="bi bi-instagram"></i>
+										<i class="bi bi-facebook"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="col-lg-4 col-md-6">
+						<div class="trainer-card text-center">
+							<div class="trainer-img-box">
+								<img src="assets/images/layout/entrenadores/1.png" class="trainer-img" alt="" />
+							</div>
+
+							<div class="trainer-content">
+								<h5 class="fw-bold text-white mb-1">Raquel Neira</h5>
+								<p class="text-red mb-1">Entrenador de Fuerza</p>
+
+								<div class="trainer-extra">
+									<p class="text-secondary small mb-2">+5 años experiencia</p>
+									<p class="text-secondary small mb-2">Entrenamiento funcional & bienestar</p>
+
+									<div class="trainer-social">
+										<i class="bi bi-instagram"></i>
+										<i class="bi bi-facebook"></i>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</section>
+
+		<section id="clases" class="section-center section">
+			<div class="container">
+				<div class="text-center mb-5">
+					<h2 class="fw-bold title-1 text-white"><span>Nuestras</span> Clases</h2>
+					<p>Encuentra la actividad perfecta para ti</p>
+				</div>
+
+				<div class="class-grid" id="classes-container">
+					<!-- INSERTANDO CARTAS DINAMICAMENTE -->
 				</div>
 			</div>
 		</section>
