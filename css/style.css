@@ -399,6 +399,7 @@ p {
   position: relative;
   border-radius: 20px;
   transform-style: preserve-3d;
+  border: 1px solid rgba(255, 255, 255, 0.02);
 }
 .product-card::before, .product-card::after {
   position: absolute;
@@ -423,6 +424,9 @@ p {
 .product-card:hover::before, .product-card:hover::after {
   opacity: 0.03;
 }
+.product-card:hover {
+  border: 1px solid rgba(255, 255, 255, 0.1);
+}
 .product-name {
   position: absolute;
   top: 15px;
@@ -446,12 +450,12 @@ p {
   position: absolute;
   top: 50%;
   left: 50%;
-  width: 220px;
-  height: 220px;
+  width: 210px;
+  height: 210px;
   border-radius: 50%;
   transform-style: preserve-3d;
   transform: translate3d(-50%, -50%, 50px);
-  transition: 0.5s;
+  transition: 0.3s;
   z-index: 10;
 }
 .product-circle-1 {
