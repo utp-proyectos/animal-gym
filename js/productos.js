@@ -1,4 +1,4 @@
 VanillaTilt.init(document.querySelectorAll('.product-card'), {
-	max: 15,
+	max: 25,
 	speed: 400,
 })

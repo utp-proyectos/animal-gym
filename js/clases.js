@@ -1,4 +1,3 @@
-console.log('testing lcases')
 const clasesGym = [
 	{
 		titulo: 'Spinning',
@@ -38,13 +37,19 @@ const clasesGym = [
 	},
 ]
 
-const container = document.getElementById('row-container')
+const container = document.getElementById('classes-container')
 
 container.innerHTML = ''
 
-clasesGym.forEach((clase) => {
+clasesGym.forEach((clase, i) => {
 	const cardHTML = `
-            <div class="col-lg-4 col-md-6 col-12 mb-4">
+            <div
+							class="col-lg-4 col-md-6 col-12 mb-4"
+							data-aos="fade-up"
+							data-aos-delay="${100 * i}"
+							data-aos-anchor="#classes-container"
+							data-aos-offset="200"
+						>
                 <div class="card class-card border-0 shadow-lg overflow-hidden position-relative">
                     <img src="${clase.imagen}" class="class-img" alt="${clase.titulo}">
 

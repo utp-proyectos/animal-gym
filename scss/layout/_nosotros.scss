@@ -9,11 +9,19 @@
 		font-weight: 900;
 		color: white;
 		line-height: 120%;
+
+		@media screen and (max-width: 1024px) {
+			font-size: 3.5rem;
+		}
+
+		@media screen and (max-width: 768px) {
+			font-size: 3rem;
+		}
 	}
 
 	&-subtext {
 		position: absolute;
-		bottom: -85dvh;
+		bottom: -90dvh;
 
 		h2 {
 			font-size: 0.8rem;
@@ -28,7 +36,7 @@
 	&-video {
 		width: 300px;
 		height: 60dvh;
-		clip-path: polygon(0 0, 75% 15%, 100% 100%, 0 95%);
+		clip-path: polygon(0 0, 75% 15%, 100% 100%, 0 90%);
 		position: absolute;
 		top: 5dvh;
 		left: 50%;
