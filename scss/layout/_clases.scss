@@ -15,6 +15,10 @@
 		gap: 32px;
 		height: 100dvh;
 
+		@media screen and (max-width: 992px) {
+			gap: 24px;
+		}
+
 		@media screen and (max-width: 768px) {
 			grid-template-areas:
 				'c1 c1 c2 c2 c2 c2 c2'
@@ -23,7 +27,17 @@
 				'c3 c3 c3 c4 c4 c4 c4'
 				'c5 c5 c5 c5 c5 c6 c6'
 				'c5 c5 c5 c5 c5 c6 c6';
-			gap: 20px;
+		}
+
+		@media screen and (max-width: 576px) {
+			grid-template-areas:
+				'c1 c1 c1 c1 c2 c2 c2'
+				'c1 c1 c1 c1 c2 c2 c2'
+				'c3 c3 c3 c4 c4 c4 c4'
+				'c3 c3 c3 c4 c4 c4 c4'
+				'c5 c5 c5 c5 c6 c6 c6'
+				'c5 c5 c5 c5 c6 c6 c6';
+			gap: 12px;
 		}
 	}
 	&-card {
