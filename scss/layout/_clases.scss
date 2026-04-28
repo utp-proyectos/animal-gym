@@ -12,7 +12,7 @@
 			'c3 c3 c4 c4 c2 c2 c2'
 			'c5 c5 c5 c5 c5 c6 c6'
 			'c5 c5 c5 c5 c5 c6 c6';
-		gap: 20px;
+		gap: 32px;
 		height: 100dvh;
 
 		@media screen and (max-width: 768px) {
@@ -23,7 +23,7 @@
 				'c3 c3 c3 c4 c4 c4 c4'
 				'c5 c5 c5 c5 c5 c6 c6'
 				'c5 c5 c5 c5 c5 c6 c6';
-			height: 100dvh;
+			gap: 20px;
 		}
 	}
 	&-card {
