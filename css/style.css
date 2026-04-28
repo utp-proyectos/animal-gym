@@ -128,7 +128,6 @@ p {
 
 .section {
   padding-top: 8rem;
-  min-height: 100vh;
 }
 .section-header {
   display: flex;
@@ -141,7 +140,7 @@ p {
 }
 @media screen and (max-width: 768px) {
   .section {
-    padding-top: 4rem;
+    padding-top: 8rem;
   }
 }
 
@@ -290,7 +289,6 @@ p {
   font-size: 4rem;
   font-weight: 900;
   color: #000000;
-  line-height: 80%;
 }
 @media screen and (max-width: 1024px) {
   .nosotros-title {
@@ -350,12 +348,12 @@ p {
   .machine-grid {
     grid-template: repeat(8, 1fr)/repeat(13, 1fr);
     grid-template-areas: "m1 m1 m1 m1 m1 m1 m3 m3 m3 m3 m3 m3 m3" "m1 m1 m1 m1 m1 m1 m3 m3 m3 m3 m3 m3 m3" "m2 m2 m2 m2 m2 m4 m4 m4 m4 m4 m4 m4 m4" "m2 m2 m2 m2 m2 m4 m4 m4 m4 m4 m4 m4 m4" "m5 m5 m5 m5 m5 m5 m6 m6 m6 m6 m6 m6 m6" "m5 m5 m5 m5 m5 m5 m6 m6 m6 m6 m6 m6 m6" "m7 m7 m7 m7 m7 m7 m7 m8 m8 m8 m8 m8 m8" "m7 m7 m7 m7 m7 m7 m7 m8 m8 m8 m8 m8 m8";
-    gap: 20px;
+    gap: 24px;
   }
 }
 @media screen and (max-width: 576px) {
-  .machine-grid .machine-card-content {
-    visibility: hidden;
+  .machine-grid {
+    gap: 12px;
   }
 }
 .machine-card {
@@ -387,6 +385,11 @@ p {
   flex-direction: column;
   justify-content: flex-end;
   opacity: 0;
+}
+@media screen and (max-width: 576px) {
+  .machine-card-content {
+    visibility: hidden;
+  }
 }
 .machine-card-title {
   font-size: 1rem;
@@ -552,10 +555,20 @@ p {
   gap: 32px;
   height: 100dvh;
 }
+@media screen and (max-width: 992px) {
+  .class-grid {
+    gap: 24px;
+  }
+}
 @media screen and (max-width: 768px) {
   .class-grid {
     grid-template-areas: "c1 c1 c2 c2 c2 c2 c2" "c1 c1 c2 c2 c2 c2 c2" "c3 c3 c3 c4 c4 c4 c4" "c3 c3 c3 c4 c4 c4 c4" "c5 c5 c5 c5 c5 c6 c6" "c5 c5 c5 c5 c5 c6 c6";
-    gap: 20px;
+  }
+}
+@media screen and (max-width: 576px) {
+  .class-grid {
+    grid-template-areas: "c1 c1 c1 c1 c2 c2 c2" "c1 c1 c1 c1 c2 c2 c2" "c3 c3 c3 c4 c4 c4 c4" "c3 c3 c3 c4 c4 c4 c4" "c5 c5 c5 c5 c6 c6 c6" "c5 c5 c5 c5 c6 c6 c6";
+    gap: 12px;
   }
 }
 .class-card {
