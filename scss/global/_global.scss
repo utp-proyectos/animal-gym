@@ -89,13 +89,21 @@ p {
 
 .section {
 	padding-top: 8rem;
-}
-
-.section-center {
 	min-height: 100vh;
-	display: flex;
-	align-items: center;
-	justify-content: center;
+
+	&-header {
+		display: flex;
+		flex-direction: column;
+		align-items: center;
+		gap: 8px;
+		text-align: center;
+		overflow: hidden;
+		padding-bottom: 3rem;
+	}
+
+	@media screen and (max-width: 768px) {
+		padding-top: 4rem;
+	}
 }
 
 .img-fluid {
