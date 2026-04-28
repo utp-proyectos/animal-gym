@@ -449,13 +449,16 @@ p {
   width: 100%;
   max-width: 300px;
   height: 400px;
+}
+.product-card-tilt {
+  height: 100%;
   background-color: #212529;
   position: relative;
   border-radius: 20px;
   transform-style: preserve-3d;
   border: 1px solid rgba(255, 255, 255, 0.02);
 }
-.product-card::before, .product-card::after {
+.product-card-tilt::before, .product-card-tilt::after {
   position: absolute;
   font-weight: 900;
   color: #fff;
@@ -463,22 +466,22 @@ p {
   opacity: 0;
   transition: 0.5s;
 }
-.product-card::before {
+.product-card-tilt::before {
   content: "ANIMAL";
   top: 20px;
   left: 20px;
   font-size: 4em;
 }
-.product-card::after {
+.product-card-tilt::after {
   content: "GYM";
   bottom: 20px;
   right: 20px;
   font-size: 4em;
 }
-.product-card:hover::before, .product-card:hover::after {
+.product-card-tilt:hover::before, .product-card-tilt:hover::after {
   opacity: 0.03;
 }
-.product-card:hover {
+.product-card-tilt:hover {
   border: 1px solid rgba(255, 255, 255, 0.1);
 }
 .product-name {
@@ -498,7 +501,7 @@ p {
   letter-spacing: 1px;
   text-transform: uppercase;
 }
-.product-card:hover .product-name {
+.product-card-tilt:hover .product-name {
   opacity: 1;
   top: 30px;
 }
@@ -523,7 +526,7 @@ p {
 .product-circle-3 {
   background-color: rgb(20, 20, 20);
 }
-.product-card:hover .product-circle {
+.product-card-tilt:hover .product-circle {
   width: 200px;
   height: 200px;
 }
@@ -537,7 +540,7 @@ p {
   transition: 0.5s;
   z-index: 11;
 }
-.product-card:hover .product {
+.product-card-tilt:hover .product {
   transform: translate3d(-50%, -50%, 100px) rotate(15deg) scale(1.1);
 }
 
