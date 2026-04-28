@@ -9,7 +9,7 @@
 			'm6 m6 m6 m6 m4 m4 m4 m4 m4 m4 m5 m5 m5'
 			'm6 m6 m6 m6 m7 m7 m8 m8 m8 m8 m8 m8 m8'
 			'm6 m6 m6 m6 m7 m7 m8 m8 m8 m8 m8 m8 m8';
-		gap: 20px;
+		gap: 32px;
 		height: 100dvh;
 
 		@media screen and (max-width: 992px) {
@@ -23,6 +23,7 @@
 				'm5 m5 m5 m5 m5 m5 m6 m6 m6 m6 m6 m6 m6'
 				'm7 m7 m7 m7 m7 m7 m7 m8 m8 m8 m8 m8 m8'
 				'm7 m7 m7 m7 m7 m7 m7 m8 m8 m8 m8 m8 m8';
+			gap: 20px;
 		}
 
 		@media screen and (max-width: 576px) {
