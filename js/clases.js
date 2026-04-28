@@ -48,9 +48,9 @@ clasesGym.forEach((clase, i) => {
 										<div
 											class="class-card overflow-hidden position-relative"
 											data-aos="fade-up"
-											data-aos-delay="${100 * i}"
-											data-aos-anchor="#classes-container"
-											data-aos-offset="200"
+											data-aos-delay="${100 * i + 300}"
+											data-aos-offset="300"
+											data-aos-anchor="#clases .title-1"
 										>
                     	<img src="${clase.imagen}" class="class-img" alt="${clase.titulo}">
 
