@@ -8,11 +8,11 @@
 
 		&-tilt {
 			height: 100%;
-			background-color: $bg-secondary;
+			background-color: rgb(33, 33, 33);
 			position: relative;
 			border-radius: 20px;
 			transform-style: preserve-3d;
-			border: 1px solid rgba(255, 255, 255, 0.02);
+			border: 1px solid rgba(255, 255, 255, 0.05);
 
 			&::before,
 			&::after {
@@ -43,7 +43,7 @@
 			}
 
 			&:hover {
-				border: 1px solid rgba(255, 255, 255, 0.1);
+				border: 1px solid rgba(255, 255, 255, 0.15);
 			}
 		}
 	}
