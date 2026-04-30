@@ -759,4 +759,80 @@ p {
   filter: grayscale(100%) brightness(0.6);
 }
 
+.page-compra {
+  background: #0a0a0a;
+  color: white;
+  text-align: center;
+}
+
+.hidden {
+  display: none;
+}
+
+.progress-container {
+  --line-offset: 80px;
+  background-image: linear-gradient(#343a40 50%, #343a40 100%);
+  background-size: calc(100% - var(--line-offset)) 2px;
+  background-repeat: no-repeat;
+  background-position: center;
+  max-width: 600px;
+}
+
+.progress-step {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  color: #000;
+  font-weight: 900;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  position: relative;
+  z-index: 2;
+  transition: all 0.3s ease;
+}
+
+.progress-step.active {
+  background-color: #b4001a;
+  color: #fff;
+}
+
+.card-membership {
+  background-color: #0a0a0a;
+  border: 1px solid #212529;
+  border-radius: 8px;
+  padding: 20px 25px;
+  cursor: pointer;
+  transition: all 0.3s ease;
+}
+
+.card-membership:hover {
+  border-color: #b4001a;
+}
+
+.card-membership.active {
+  background: linear-gradient(90deg, #1a080a 0%, #0a0a0a 100%);
+  border-left: 4px solid #b4001a;
+}
+
+.summary-card {
+  background-color: #212529;
+  border-radius: 12px;
+  color: #f8f9fa;
+}
+
+/* Botón Estilo Animal Gym */
+.btn-danger {
+  background-color: #b3001b !important;
+  border: none;
+  border-radius: 8px;
+  transition: transform 0.2s;
+}
+
+.btn-danger:hover {
+  background-color: #8e0015 !important;
+  transform: translateY(-2px);
+}
+
 /*# sourceMappingURL=style.css.map */
