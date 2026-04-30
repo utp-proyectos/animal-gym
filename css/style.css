@@ -764,7 +764,6 @@ p {
 .page-compra {
   background: #0a0a0a;
   color: white;
-  text-align: center;
 }
 
 .hidden {
@@ -821,20 +820,7 @@ p {
 .summary-card {
   background-color: #212529;
   border-radius: 12px;
-  color: #f8f9fa;
-}
-
-/* Botón Estilo Animal Gym */
-.btn-danger {
-  background-color: #b3001b !important;
-  border: none;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-
-.btn-danger:hover {
-  background-color: #8e0015 !important;
-  transform: translateY(-2px);
+  color: #b9b9b9;
 }
 
 .modal-icon {
