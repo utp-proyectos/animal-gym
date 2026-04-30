@@ -1,65 +1,60 @@
 const membresias = [
-    {
-        titulo: "Membresía Básica",
-        precio: "S/ 60.0",
-        precioDesc: "S/ 49.0",
-        descripcion: "Acceso a zona de máquinas básicas y cardio.",
-        duracion: "30 días",
-        cupos: 50,
-        ventas: 100
-    },
-    {
-        titulo: "Membresía FiTT",
-        precio: "S/ 75.0",
-        precioDesc: "S/ 65.0",
-        descripcion: "Incluye máquinas básicas + clases grupales.",
-        duracion: "30 días",
-        cupos: 40,
-        ventas: 100
-
-    },
-    {
-        titulo: "Membresía Premium",
-        precio: "S/ 120.0",
-        precioDesc: "S/ 99.0",
-        descripcion: "Acceso total al gimnasio + rutinas personalizadas.",
-        duracion: "30 días",
-        cupos: 30,
-        ventas: 100
-    },
-    {
-        titulo: "Membresía Elite",
-        precio: "S/ 160.0",
-        precioDesc: "S/ 139.0",
-        descripcion: "Entrenador personal + acceso completo 24/7.",
-        duracion: "30 días",
-        cupos: 20,
-        ventas: 100
-    },
-    {
-        titulo: "Membresía Pro Athlete",
-        precio: "S/ 220.0",
-        precioDesc: "S/ 189.0",
-        descripcion: "Plan profesional con nutrición y seguimiento avanzado.",
-        duracion: "30 días",
-        cupos: 10,
-        ventas: 500
-
-    }
-];
+	{
+		titulo: 'Membresía Básica',
+		precio: 'S/ 60.0',
+		precioDesc: 'S/ 49.0',
+		descripcion: 'Acceso a zona de máquinas básicas y cardio.',
+		duracion: '30 días',
+		cupos: 50,
+		ventas: 100,
+	},
+	{
+		titulo: 'Membresía FiTT',
+		precio: 'S/ 75.0',
+		precioDesc: 'S/ 65.0',
+		descripcion: 'Incluye máquinas básicas + clases grupales.',
+		duracion: '30 días',
+		cupos: 40,
+		ventas: 100,
+	},
+	{
+		titulo: 'Membresía Premium',
+		precio: 'S/ 120.0',
+		precioDesc: 'S/ 99.0',
+		descripcion: 'Acceso total al gimnasio + rutinas personalizadas.',
+		duracion: '30 días',
+		cupos: 30,
+		ventas: 100,
+	},
+	{
+		titulo: 'Membresía Elite',
+		precio: 'S/ 160.0',
+		precioDesc: 'S/ 139.0',
+		descripcion: 'Entrenador personal + acceso completo 24/7.',
+		duracion: '30 días',
+		cupos: 20,
+		ventas: 100,
+	},
+	{
+		titulo: 'Membresía Pro Athlete',
+		precio: 'S/ 220.0',
+		precioDesc: 'S/ 189.0',
+		descripcion: 'Plan profesional con nutrición y seguimiento avanzado.',
+		duracion: '30 días',
+		cupos: 10,
+		ventas: 500,
+	},
+]
 
 const lista = document.querySelector('#memberships-splide .splide__list')
-membresias.sort((a, b) => b.ventas - a.ventas);
-const mejor = membresias[0];
-membresias.splice(0, 1);
-membresias.splice(1, 0, mejor);
+membresias.sort((a, b) => b.ventas - a.ventas)
+const mejor = membresias[0]
+membresias.splice(0, 1)
+membresias.splice(1, 0, mejor)
 
-const maxVentas = Math.max(...membresias.map(m => m.ventas))
-membresias.forEach(m => {
-
-    lista.innerHTML +=
-
-        `
+const maxVentas = Math.max(...membresias.map((m) => m.ventas))
+membresias.forEach((m) => {
+	lista.innerHTML += `
     <li class="splide__slide d-flex justify-content-center">
       <div class="card custom-card shadow-lg  ${m.ventas === maxVentas ? 'popular-membership' : ''} overflow-hidden h-100">
         <div class="card-body text-center p-4">
@@ -77,27 +72,26 @@ membresias.forEach(m => {
             <p class="text-white mt-3 fw-bold me-2 text-md">Cupos disponibles:</p>
             <p class="text-white mt-3 fw-bold me-2 text-md">${m.cupos}</p>
           </div>
-          <a href="#" class="c-btn c-btn-primary shadow-lg mt-4">
+          <a href="compra.html" class="c-btn c-btn-primary shadow-lg mt-4">
             Elegir Plan <i class="bi bi-arrow-right ms-2"></i>
           </a>
         </div>
       </div>
-    </li>`;
-});
+    </li>`
+})
 
 new Splide('#memberships-splide', {
-    type: 'loop',
-    perPage: 3,
-    pagination: false,
-    arrows: true,
-    breakpoints: {
+	type: 'loop',
+	perPage: 3,
+	pagination: false,
+	arrows: true,
+	breakpoints: {
+		1300: {
+			perPage: 2,
+		},
 
-        1300: {
-            perPage: 2
-        },
-
-        992: {
-            perPage: 1
-        }
-    }
-}).mount();
+		992: {
+			perPage: 1,
+		},
+	},
+}).mount()
