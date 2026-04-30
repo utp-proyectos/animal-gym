@@ -1,4 +1,4 @@
-# Animal Gym 2 - Guía de Git y GitHub
+# Animal Gym - Guía de Git y GitHub
 
 > Documentación del flujo de trabajo Git para el proyecto Animal Gym 2
 
