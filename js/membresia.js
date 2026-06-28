@@ -1,97 +1,72 @@
-const membresias = [
-	{
-		titulo: 'Membresía Básica',
-		precio: 'S/ 60.0',
-		precioDesc: 'S/ 49.0',
-		descripcion: 'Acceso a zona de máquinas básicas y cardio.',
-		duracion: '30 días',
-		cupos: 50,
-		ventas: 100,
-	},
-	{
-		titulo: 'Membresía FiTT',
-		precio: 'S/ 75.0',
-		precioDesc: 'S/ 65.0',
-		descripcion: 'Incluye máquinas básicas + clases grupales.',
-		duracion: '30 días',
-		cupos: 40,
-		ventas: 100,
-	},
-	{
-		titulo: 'Membresía Premium',
-		precio: 'S/ 120.0',
-		precioDesc: 'S/ 99.0',
-		descripcion: 'Acceso total al gimnasio + rutinas personalizadas.',
-		duracion: '30 días',
-		cupos: 30,
-		ventas: 100,
-	},
-	{
-		titulo: 'Membresía Elite',
-		precio: 'S/ 160.0',
-		precioDesc: 'S/ 139.0',
-		descripcion: 'Entrenador personal + acceso completo 24/7.',
-		duracion: '30 días',
-		cupos: 20,
-		ventas: 100,
-	},
-	{
-		titulo: 'Membresía Pro Athlete',
-		precio: 'S/ 220.0',
-		precioDesc: 'S/ 189.0',
-		descripcion: 'Plan profesional con nutrición y seguimiento avanzado.',
-		duracion: '30 días',
-		cupos: 10,
-		ventas: 500,
-	},
-]
+const API_URL_MEMBERSHIPS = 'http://localhost:8080/api/memberships'
 
-const lista = document.querySelector('#memberships-splide .splide__list')
-membresias.sort((a, b) => b.ventas - a.ventas)
-const mejor = membresias[0]
-membresias.splice(0, 1)
-membresias.splice(1, 0, mejor)
+async function cargarMembresias() {
+	const lista = document.querySelector('#memberships-splide .splide__list')
 
-const maxVentas = Math.max(...membresias.map((m) => m.ventas))
-membresias.forEach((m) => {
-	lista.innerHTML += `
-    <li class="splide__slide d-flex justify-content-center">
-      <div class="card custom-card shadow-lg  ${m.ventas === maxVentas ? 'popular-membership' : ''} overflow-hidden h-100">
-        <div class="card-body text-center p-4">
-          <h3 class="mb-4 color-primary">${m.titulo}</h3>
-          <p class="text-lg fw-bold mb-3 color-primary">${m.precio}</p>
-          <p class="text-md">${m.precioDesc}</p>
-          <p class="text-wrap mb-4">${m.descripcion}</p>
-          <div class="d-flex justify-content-center align-items-center">
-            <i class="bi bi-clock-fill fs-3 me-2 color-primary"></i>
-            <p class="text-white mt-3 fw-bold me-2 text-md">Duración:</p>
-            <p class="text-white mt-3 fw-bold me-2 text-md">${m.duracion}</p>
+	try {
+		const response = await fetch(API_URL_MEMBERSHIPS)
+		if (!response.ok) throw new Error('Error al obtener membresías')
+
+		const json = await response.json()
+		const membresias = json.data
+
+		console.log(membresias)
+
+		const maxEnrollados = Math.max(...membresias.map((m) => m.enrolledMembers ?? 0))
+
+		lista.innerHTML = ''
+
+		membresias.forEach((m) => {
+			const esPopular = m.enrolledMembers === maxEnrollados
+			const precioFinal = m.discountPrice ?? m.price
+
+			lista.innerHTML += `
+        <li class="splide__slide d-flex justify-content-center">
+          <div class="card custom-card shadow-lg ${esPopular ? 'popular-membership' : ''} overflow-hidden h-100">
+            <div class="card-body text-center p-4">
+              <h3 class="mb-4 color-primary">${m.name}</h3>
+              <p class="text-lg fw-bold mb-1 color-primary">S/. ${precioFinal.toFixed(2)}</p>
+              ${m.discountPrice ? `<p class="text-md text-decoration-line-through text-secondary">S/. ${m.price.toFixed(2)}</p>` : ''}
+              <p class="text-wrap mb-4">${m.description}</p>
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="bi bi-clock-fill fs-3 me-2 color-primary"></i>
+                <p class="text-white mt-3 fw-bold me-2 text-md">Duración:</p>
+                <p class="text-white mt-3 fw-bold me-2 text-md">${m.duration} días</p>
+              </div>
+              <div class="d-flex justify-content-center align-items-center">
+                <i class="bi bi-file-person-fill color-primary fs-3 me-2"></i>
+                <p class="text-white mt-3 fw-bold me-2 text-md">Cupos disponibles:</p>
+                <p class="text-white mt-3 fw-bold me-2 text-md">${m.capacityLimit}</p>
+              </div>
+              <a href="compra.html" class="c-btn c-btn-primary shadow-lg mt-4">
+                Elegir Plan <i class="bi bi-arrow-right ms-2"></i>
+              </a>
+            </div>
           </div>
-          <div class="d-flex justify-content-center align-items-center">
-            <i class="bi bi-file-person-fill color-primary fs-3 me-2"></i>
-            <p class="text-white mt-3 fw-bold me-2 text-md">Cupos disponibles:</p>
-            <p class="text-white mt-3 fw-bold me-2 text-md">${m.cupos}</p>
-          </div>
-          <a href="compra.html" class="c-btn c-btn-primary shadow-lg mt-4">
-            Elegir Plan <i class="bi bi-arrow-right ms-2"></i>
-          </a>
-        </div>
-      </div>
-    </li>`
-})
+        </li>
+      `
+		})
 
-new Splide('#memberships-splide', {
-	type: 'loop',
-	perPage: 3,
-	pagination: false,
-	arrows: true,
-	breakpoints: {
-		1300: {
-			perPage: 2,
-		},
+		// Inicializar Splide después de insertar las cards
+		const total = membresias.length
 
-		992: {
-			perPage: 1,
-		},
-	},
-}).mount()
+		new Splide('#memberships-splide', {
+			type: 'slide',
+			perPage: Math.min(total, 3), // máximo 3, pero si hay 1 muestra 1
+			perMove: 1,
+			focus: 'center',
+			gap: '1.5rem',
+			breakpoints: {
+				768: { perPage: 1 },
+				1024: { perPage: Math.min(total, 2) },
+			},
+		}).mount()
+
+		if (typeof AOS !== 'undefined') AOS.refresh()
+	} catch (error) {
+		console.error('Error:', error)
+		lista.innerHTML = `<li class="text-white text-center w-100">No se pudieron cargar las membresías.</li>`
+	}
+}
+
+cargarMembresias()
