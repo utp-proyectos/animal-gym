@@ -44,14 +44,14 @@ body {
   font-weight: 400;
   font-size: 16px;
   line-height: 1.5;
-  color: #6c757d;
+  color: #b9b9b9;
   background-color: hsl(240, 10%, 90%);
 }
 
 p {
   font-size: 16px;
   margin-bottom: 1rem;
-  color: #6c757d;
+  color: #b9b9b9;
 }
 
 /* Headings */
@@ -176,7 +176,7 @@ p {
   width: 100%;
   padding: 5px 14px;
   font-size: 16px;
-  color: #6c757d;
+  color: #b9b9b9;
   background-color: #212529;
   border: 1px solid #343a40;
   border-radius: 8px;
@@ -455,11 +455,11 @@ p {
 }
 .product-card-tilt {
   height: 100%;
-  background-color: #212529;
+  background-color: rgb(33, 33, 33);
   position: relative;
   border-radius: 20px;
   transform-style: preserve-3d;
-  border: 1px solid rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(255, 255, 255, 0.05);
 }
 .product-card-tilt::before, .product-card-tilt::after {
   position: absolute;
@@ -485,7 +485,7 @@ p {
   opacity: 0.03;
 }
 .product-card-tilt:hover {
-  border: 1px solid rgba(255, 255, 255, 0.1);
+  border: 1px solid rgba(255, 255, 255, 0.15);
 }
 .product-name {
   position: absolute;
@@ -755,14 +755,15 @@ p {
   min-height: 300px;
 }
 .contact-map iframe {
+  width: 100%;
+  height: 100%;
   border: 0;
-  filter: grayscale(100%) brightness(0.6);
+  filter: grayscale(30%) brightness(0.8);
 }
 
 .page-compra {
   background: #0a0a0a;
   color: white;
-  text-align: center;
 }
 
 .hidden {
@@ -819,20 +820,7 @@ p {
 .summary-card {
   background-color: #212529;
   border-radius: 12px;
-  color: #f8f9fa;
-}
-
-/* Botón Estilo Animal Gym */
-.btn-danger {
-  background-color: #b3001b !important;
-  border: none;
-  border-radius: 8px;
-  transition: transform 0.2s;
-}
-
-.btn-danger:hover {
-  background-color: #8e0015 !important;
-  transform: translateY(-2px);
+  color: #b9b9b9;
 }
 
 .modal-icon {

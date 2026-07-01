@@ -60,6 +60,13 @@ export const aboutUsAnimation = () => {
 		{
 			rotateX: 0,
 			rotateY: 0,
+		},
+		0
+	)
+
+	tl.to(
+		'.nosotros-video',
+		{
 			width: '100%',
 			height: '100dvh',
 			top: 0,
