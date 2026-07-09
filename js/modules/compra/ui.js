@@ -1,5 +1,5 @@
 import { state } from './state.js'
-
+import { renderResumen } from './resumen.js'
 const titles = {
 	1: '<span>Selecciona</span> tu membresía',
 	2: '<span>Completa</span> tu registro',
@@ -15,6 +15,7 @@ export function render() {
 	title.innerHTML = titles[state.step]
 
 	updateProgress()
+	renderResumen()
 }
 
 function updateProgress() {

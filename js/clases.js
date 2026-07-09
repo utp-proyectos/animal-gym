@@ -1,73 +1,38 @@
-const clasesGym = [
-	{
-		titulo: 'Zumba',
-		descripcion: 'Clase de baile fitness.',
-		imagen: 'assets/images/layout/clases/clases6.jpg',
-		icono: 'bi-music-note-beamed',
-	},
+const API_URL = 'http://localhost:8080/api/sessions'
 
-	{
-		titulo: 'Boxeo',
-		descripcion: 'Entrenamiento de boxeo y cardio',
-		imagen: 'assets/images/layout/clases/clase3.jpg',
-		icono: 'bi-hand-thumbs-up-fill',
-	},
-	{
-		titulo: 'Pilates',
-		descripcion: 'Clases de pilates con ejercicios de core',
-		imagen: 'assets/images/layout/clases/clase2.jpg',
-		icono: 'bi-person-arms-up',
-	},
+async function cargarClases() {
+	const container = document.getElementById('classes-container')
 
-	{
-		titulo: 'Spinning',
-		descripcion: 'Clases de ciclismo indoor',
-		imagen: 'assets/images/layout/clases/clase1.jpg',
-		icono: 'bi-bicycle',
-	},
-	{
-		titulo: 'Crossfit',
-		descripcion: 'Entrenamiento funcional',
-		imagen: 'assets/images/layout/clases/clase4.jpg',
-		icono: 'bi-bar-chart-line',
-	},
-	{
-		titulo: 'Yoga',
-		descripcion: 'Clase de yoga para principiantes.',
-		imagen: 'assets/images/layout/clases/clase5.jpg',
-		icono: 'bi-peace',
-	},
-]
+	try {
+		const response = await fetch(API_URL)
+		if (!response.ok) throw new Error('Error al obtener las clases')
 
-const container = document.getElementById('classes-container')
+		const json = await response.json()
+		const clases = json.data
+		console.log(clases) // ← primero verifica qué campos manda el backend
 
-container.innerHTML = ''
+		container.innerHTML = ''
 
-clasesGym.forEach((clase, i) => {
-	const cardHTML = `
-										<div
-											class="class-card overflow-hidden position-relative"
-											data-aos="fade-up"
-											data-aos-delay="${100 * i + 300}"
-											data-aos-offset="300"
-											data-aos-anchor="#clases .title-1"
-										>
-                    	<img src="${clase.imagen}" class="class-img" alt="${clase.titulo}">
+		clases.forEach((clase, i) => {
+			container.innerHTML += `
+    <div class="class-card" data-aos="fade-up" data-aos-delay="${100 * i + 300}" data-aos-offset="300">
+      <img src="${clase.image}" class="class-img" alt="${clase.name}" />
+      <div class="class-footer">
+        <h5 class="text-white m-auto">${clase.name}</h5>
+      </div>
+      <div class="class-overlay">
+        <h4 class="text-white fw-bold mb-2">${clase.name}</h4>
+        <p class="text-white">${clase.description}</p>
+      </div>
+    </div>
+  `
+		})
 
-											<div class="class-footer">
-													<h5 class="text-white m-auto">${clase.titulo}</h5>
-													<div class="class-icon">
-															<i class="bi ${clase.icono} text-white"></i>
-													</div>
-											</div>
+		if (typeof AOS !== 'undefined') AOS.refresh()
+	} catch (error) {
+		console.error('Error:', error)
+		container.innerHTML = `<p class="text-white text-center w-full">No se pudieron cargar las clases.</p>`
+	}
+}
 
-											<div class="class-overlay">
-													<i class="bi ${clase.icono} text-white display-6"></i>
-													<h4 class="text-white fw-bold mb-2">${clase.titulo}</h4>
-													<p class="text-white">${clase.descripcion}</p>
-											</div>
-									</div>
-
-        `
-	container.innerHTML += cardHTML
-})
+cargarClases()

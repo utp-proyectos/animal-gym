@@ -23,7 +23,7 @@
 					class="navbar navbar-expand-lg bg-black d-flex fixed-top navbar-main justify-content-center"
 				>
 					<a class="navbar-brand text-white" href="index.html">
-						<img src="assets/images/logo.png" alt="Logo-Aniaml-Gym" class="img-fluid navbar-logo" />
+						<img src="assets/images/logo.png" alt="Logo-Animal-Gym" class="img-fluid navbar-logo" />
 					</a>
 				</nav>
 			</div>
@@ -52,68 +52,32 @@
 				<!-- COLUMNA IZQUIERDA: MEMBRESÍAS -->
 				<div class="col-lg-7">
 					<h2 class="text-white mb-4 h4">Selecciona tu membresía</h2>
-
-					<div class="card-membership active mb-3" onclick="selectMembresia('premium', 55)">
-						<div class="d-flex justify-content-between align-items-center mb-3">
-							<h3 class="h5 mb-0">Premiun</h3>
-							<span class="fw-bold">S/ 55.00</span>
-						</div>
-						<div class="d-flex gap-4">
-							<span
-								><i class="bi bi-clock me-2 text-danger"></i>Duración:
-								<strong>30 días</strong></span
-							>
-							<span
-								><i class="bi bi-people-fill me-2 text-danger"></i>Cupos: <strong>10</strong></span
-							>
-						</div>
-					</div>
-
-					<div class="card-membership mb-3" onclick="selectMembresia('basica', 30)">
-						<div class="d-flex justify-content-between align-items-center mb-3">
-							<h3 class="h5 mb-0">Basica</h3>
-							<span class="fw-bold">S/ 30.00</span>
-						</div>
-						<div class="d-flex gap-4">
-							<span
-								><i class="bi bi-clock me-2 text-danger"></i>Duración:
-								<strong>30 días</strong></span
-							>
-							<span
-								><i class="bi bi-people-fill me-2 text-danger"></i>Cupos: <strong>30</strong></span
-							>
-						</div>
-					</div>
+					<!-- Cards insertadas dinámicamente desde js -->
 				</div>
 
 				<!-- COLUMNA DERECHA: RESUMEN -->
 				<div class="col-lg-5">
 					<div class="summary-card p-4">
 						<h4 class="title-4 mb-4">DETALLES DE LA COMPRA</h4>
-
 						<div class="mb-4">
 							<p>Gimnasio: <span class="text-danger">Animal Gym</span></p>
-							<p>Plan elegido: <strong>premiun</strong></p>
-							<p>Duración: 30 días</p>
-							<p>Cupos disponibles: 1</p>
+							<p>Plan elegido: <strong class="plan-nombre">-</strong></p>
+							<p>Duración: <span class="plan-duracion">-</span></p>
+							<p>Cupos disponibles: <span class="plan-cupos">-</span></p>
 						</div>
-
 						<hr class="text-secondary" />
-
 						<div class="d-flex justify-content-between mb-2 mt-4">
 							<span>Precio regular:</span>
-							<span>S/. 55.00</span>
+							<span class="precio-regular">S/. 0.00</span>
 						</div>
 						<div class="d-flex justify-content-between mb-4">
 							<span>Descuento:</span>
-							<span>S/. 0.00</span>
+							<span class="precio-descuento">S/. 0.00</span>
 						</div>
-
 						<div class="d-flex justify-content-between mb-4">
 							<span class="fw-bold">Total a pagar:</span>
-							<span class="fw-bold text-danger h5">S/. 55.00</span>
+							<span class="fw-bold text-danger h5 precio-total">S/. 0.00</span>
 						</div>
-
 						<button class="c-btn c-btn-primary w-100 py-2 fw-bold" onclick="goToStep2()">
 							Continuar al Registro
 						</button>
@@ -128,155 +92,139 @@
 				<!-- COLUMNA IZQUIERDA -->
 				<div class="col-lg-7">
 					<h2 class="text-white mb-4 h4">Completa tu registro</h2>
-
-					<div>
-						<form id="formInfo" class="row g-3 needs-validation" novalidate>
-							<!-- DNI -->
-							<div class="col-md-6">
-								<label class="form-label">DNI</label>
-								<input
-									type="text"
-									name="dni"
-									id="dniInput"
-									class="c-form-control"
-									pattern="\d{8}"
-									maxlength="8"
-									placeholder="00000000"
-									required
-								/>
-								<div class="invalid-feedback">Debe contener exactamente 8 dígitos.</div>
+					<form id="formInfo" class="row g-3 needs-validation" novalidate>
+						<div class="col-md-6">
+							<label class="form-label">DNI</label>
+							<input
+								type="text"
+								name="dni"
+								id="dniInput"
+								class="c-form-control"
+								pattern="\d{8}"
+								maxlength="8"
+								placeholder="00000000"
+								required
+							/>
+							<div class="invalid-feedback">Debe contener exactamente 8 dígitos.</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Género</label>
+							<select class="c-form-control" name="genero" required>
+								<option value="">Seleccione</option>
+								<option value="Masculino">Masculino</option>
+								<option value="Femenino">Femenino</option>
+								<option value="Otro">Otro</option>
+							</select>
+							<div class="invalid-feedback">Seleccione un género.</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Nombres</label>
+							<input
+								type="text"
+								name="nombre"
+								class="c-form-control"
+								pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}"
+								placeholder="Jhordan Manuel"
+								required
+							/>
+							<div class="invalid-feedback">
+								Ingrese un nombre válido (solo letras y espacios, mínimo 2 caracteres).
 							</div>
-
-							<!-- Género -->
-							<div class="col-md-6">
-								<label class="form-label">Género</label>
-								<select class="c-form-control" name="genero" required>
-									<option value="">Seleccione</option>
-									<option value="Masculino">Masculino</option>
-									<option value="Femenino">Femenino</option>
-									<option value="Otro">Otro</option>
-								</select>
-								<div class="invalid-feedback">Seleccione un género.</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Apellidos</label>
+							<input
+								type="text"
+								name="apellido"
+								class="c-form-control"
+								pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}"
+								placeholder="Calixto Laureano"
+								required
+							/>
+							<div class="invalid-feedback">
+								Ingrese un apellido válido (solo letras y espacios).
 							</div>
-
-							<!-- Nombres -->
-							<div class="col-md-6">
-								<label class="form-label">Nombres</label>
-								<input
-									type="text"
-									name="nombre"
-									class="c-form-control"
-									pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}"
-									placeholder="Jhordan Manuel"
-									required
-								/>
-								<div class="invalid-feedback">
-									Ingrese un nombre válido (solo letras y espacios, mínimo 2 caracteres).
-								</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Teléfono</label>
+							<input
+								type="tel"
+								name="telefono"
+								id="telefonoInput"
+								class="c-form-control"
+								pattern="\d{9}"
+								maxlength="9"
+								placeholder="999999999"
+								required
+							/>
+							<div class="invalid-feedback">Debe contener 9 dígitos numéricos.</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Email</label>
+							<input
+								type="email"
+								name="email"
+								id="emailInput"
+								class="c-form-control"
+								required
+								placeholder="ejemplo@correo.com"
+							/>
+							<div class="invalid-feedback">Ingrese un correo electrónico válido.</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Fecha de nacimiento</label>
+							<input
+								type="date"
+								name="fecha"
+								class="c-form-control"
+								required
+								min="1900-01-01"
+								max="2010-12-31"
+							/>
+							<div class="invalid-feedback">Seleccione su fecha de nacimiento.</div>
+						</div>
+						<div class="col-md-6">
+							<label class="form-label">Clave</label>
+							<input
+								type="password"
+								name="clave"
+								class="c-form-control"
+								minlength="6"
+								maxlength="20"
+								pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$"
+								placeholder="*******"
+								required
+							/>
+							<div class="invalid-feedback">
+								La clave debe tener entre 6 y 20 caracteres, con al menos una letra y un número.
 							</div>
-
-							<!-- Apellidos -->
-							<div class="col-md-6">
-								<label class="form-label">Apellidos</label>
-								<input
-									type="text"
-									name="apellido"
-									class="c-form-control"
-									pattern="[A-Za-zÁÉÍÓÚáéíóúÑñ\s]{2,50}"
-									placeholder="Calixto Laureano"
-									required
-								/>
-								<div class="invalid-feedback">
-									Ingrese un apellido válido (solo letras y espacios).
-								</div>
-							</div>
-
-							<!-- Teléfono -->
-							<div class="col-md-6">
-								<label class="form-label">Teléfono</label>
-								<input
-									type="tel"
-									name="telefono"
-									id="telefonoInput"
-									class="c-form-control"
-									pattern="\d{9}"
-									maxlength="9"
-									placeholder="999999999"
-									required
-								/>
-								<div class="invalid-feedback">Debe contener 9 dígitos numéricos.</div>
-							</div>
-
-							<!-- Email -->
-							<div class="col-md-6">
-								<label class="form-label">Email</label>
-								<input
-									type="email"
-									name="email"
-									id="emailInput"
-									class="c-form-control"
-									required
-									placeholder="ejemplo@correo.com"
-								/>
-								<div class="invalid-feedback">Ingrese un correo electrónico válido.</div>
-							</div>
-
-							<!-- Fecha de nacimiento -->
-							<div class="col-md-6">
-								<label class="form-label">Fecha de nacimiento</label>
-								<input type="date" name="fecha" class="c-form-control" required />
-								<div class="invalid-feedback">Seleccione su fecha de nacimiento.</div>
-							</div>
-
-							<!-- Clave -->
-							<div class="col-md-6">
-								<label class="form-label">Clave</label>
-								<input
-									type="password"
-									name="clave"
-									class="c-form-control"
-									minlength="6"
-									maxlength="20"
-									pattern="^(?=.*[A-Za-z])(?=.*\d)[A-Za-z\d]{6,20}$"
-									placeholder="*******"
-									required
-								/>
-								<div class="invalid-feedback">
-									La clave debe tener entre 6 y 20 caracteres, con al menos una letra y un número.
-								</div>
-							</div>
-						</form>
-					</div>
+						</div>
+					</form>
 				</div>
 
 				<!-- COLUMNA DERECHA: RESUMEN -->
 				<div class="col-lg-5">
 					<div class="summary-card p-4">
 						<h4 class="title-4 mb-4">DETALLES DE LA COMPRA</h4>
-
 						<div class="mb-4">
 							<p>Gimnasio: <span class="text-danger">Animal Gym</span></p>
-							<p>Plan elegido: <strong>premiun</strong></p>
-							<p>Duración: 30 días</p>
-							<p>Cupos disponibles: 1</p>
+							<p>Plan elegido: <strong class="plan-nombre">-</strong></p>
+							<p>Duración: <span class="plan-duracion">-</span></p>
+							<p>Cupos disponibles: <span class="plan-cupos">-</span></p>
 						</div>
-
 						<hr class="text-secondary" />
-
 						<div class="d-flex justify-content-between mb-2 mt-4">
 							<span>Precio regular:</span>
-							<span>S/. 55.00</span>
+							<span class="precio-regular">S/. 0.00</span>
 						</div>
 						<div class="d-flex justify-content-between mb-4">
 							<span>Descuento:</span>
-							<span>S/. 0.00</span>
+							<span class="precio-descuento">S/. 0.00</span>
 						</div>
-
 						<div class="d-flex justify-content-between mb-4">
 							<span class="fw-bold">Total a pagar:</span>
-							<span class="fw-bold text-danger h5">S/. 55.00</span>
+							<span class="fw-bold text-danger h5 precio-total">S/. 0.00</span>
 						</div>
-
 						<button class="c-btn c-btn-primary w-100 py-2 fw-bold" onclick="goToStep3()">
 							Continuar con el pago
 						</button>
@@ -290,84 +238,74 @@
 			<div class="row g-4">
 				<!-- COLUMNA IZQUIERDA -->
 				<div class="col-lg-7">
-					<h2 class="text-white mb-4 h4">Completa tu registro</h2>
-
-					<div>
-						<form class="needs-validation" id="formPago" novalidate>
-							<div class="mb-3">
-								<label>Número de tarjeta</label>
+					<h2 class="text-white mb-4 h4">Realiza tu pago</h2>
+					<form class="needs-validation" id="formPago" novalidate>
+						<div class="mb-3">
+							<label>Número de tarjeta</label>
+							<input
+								type="text"
+								class="c-form-control"
+								placeholder="XXXX XXXX XXXX XXXX"
+								required
+								pattern="\d{16}"
+							/>
+							<div class="invalid-feedback">Ingrese 16 dígitos.</div>
+						</div>
+						<div class="row">
+							<div class="col-md-6 mb-3">
+								<label>Expiración</label>
 								<input
 									type="text"
 									class="c-form-control"
-									placeholder="XXXX XXXX XXXX XXXX"
+									placeholder="MM/AA"
 									required
-									pattern="\d{16}"
+									pattern="\d{2}/\d{2}"
 								/>
-								<div class="invalid-feedback">Ingrese 16 dígitos.</div>
+								<div class="invalid-feedback">Formato MM/AA requerido.</div>
 							</div>
-
-							<div class="row">
-								<div class="col-md-6 mb-3">
-									<label>Expiración</label>
-									<input
-										type="text"
-										class="c-form-control"
-										placeholder="MM/AA"
-										required
-										pattern="\d{2}/\d{2}"
-									/>
-									<div class="invalid-feedback">Formato MM/AA requerido.</div>
-								</div>
-								<div class="col-md-6 mb-3">
-									<label>CVV</label>
-									<input
-										type="text"
-										class="c-form-control"
-										placeholder="123"
-										required
-										pattern="\d{3}"
-									/>
-									<div class="invalid-feedback">Ingrese 3 dígitos.</div>
-								</div>
+							<div class="col-md-6 mb-3">
+								<label>CVV</label>
+								<input
+									type="text"
+									class="c-form-control"
+									placeholder="123"
+									required
+									pattern="\d{3}"
+								/>
+								<div class="invalid-feedback">Ingrese 3 dígitos.</div>
 							</div>
-
-							<div class="mb-3">
-								<label>Nombre en la tarjeta</label>
-								<input type="text" class="c-form-control" required />
-								<div class="invalid-feedback">Campo obligatorio.</div>
-							</div>
-						</form>
-					</div>
+						</div>
+						<div class="mb-3">
+							<label>Nombre en la tarjeta</label>
+							<input type="text" class="c-form-control" required />
+							<div class="invalid-feedback">Campo obligatorio.</div>
+						</div>
+					</form>
 				</div>
 
 				<!-- COLUMNA DERECHA: RESUMEN -->
 				<div class="col-lg-5">
 					<div class="summary-card p-4">
 						<h4 class="title-4 mb-4">DETALLES DE LA COMPRA</h4>
-
 						<div class="mb-4">
 							<p>Gimnasio: <span class="text-danger">Animal Gym</span></p>
-							<p>Plan elegido: <strong>premiun</strong></p>
-							<p>Duración: 30 días</p>
-							<p>Cupos disponibles: 1</p>
+							<p>Plan elegido: <strong class="plan-nombre">-</strong></p>
+							<p>Duración: <span class="plan-duracion">-</span></p>
+							<p>Cupos disponibles: <span class="plan-cupos">-</span></p>
 						</div>
-
 						<hr class="text-secondary" />
-
 						<div class="d-flex justify-content-between mb-2 mt-4">
 							<span>Precio regular:</span>
-							<span>S/. 55.00</span>
+							<span class="precio-regular">S/. 0.00</span>
 						</div>
 						<div class="d-flex justify-content-between mb-4">
 							<span>Descuento:</span>
-							<span>S/. 0.00</span>
+							<span class="precio-descuento">S/. 0.00</span>
 						</div>
-
 						<div class="d-flex justify-content-between mb-4">
 							<span class="fw-bold">Total a pagar:</span>
-							<span class="fw-bold text-danger h5">S/. 55.00</span>
+							<span class="fw-bold text-danger h5 precio-total">S/. 0.00</span>
 						</div>
-
 						<button class="c-btn c-btn-primary w-100 py-2 fw-bold" onclick="pagar()">
 							Finalizar con el pago
 						</button>
@@ -387,10 +325,8 @@
 							<i class="bi bi-check-lg fs-1 text-white"></i>
 						</div>
 					</div>
-
 					<h4 class="fw-bold">Pago realizado con éxito</h4>
 					<p class="text-secondary small">Se enviará la factura electrónica a tu correo</p>
-
 					<button class="btn btn-danger w-100 mt-3" onclick="irApp()">Continuar a la App</button>
 				</div>
 			</div>
